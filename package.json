@@ -1,0 +1,38 @@
+{
+  "name": "datagrid",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "classnames": "^2.2.5",
+    "faker": "^4.1.0",
+    "grunt-bower-task": "^0.5.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-growl": "^0.1.5",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-svgo": "^0.1.0",
+    "grunt-svgstore": "^1.0.0",
+    "grunt-webpack": "^3.0.0",
+    "pixrem": "^3.0.2",
+    "postcss-custom-properties": "^6.0.1",
+    "react-redux": "^5.0.5",
+    "react-scripts": "1.0.6",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
