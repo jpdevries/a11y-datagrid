@@ -1,3 +1,25 @@
+@import "neat/neat";
+
+$gt-mobile: (
+  columns: 12,
+  gutter: 1rem,
+  media: 40.0625em,
+);
+
+@mixin flexible() {
+  display: flex;
+  justify-content: space-around;
+  > * {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+%flexible {
+  @include flexible;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,11 +27,20 @@
 body {
   //display: grid;
   //grid-template-rows: min-content;
-  max-height: 100vh;
-  overflow-y: hidden;
 
-  display: flex;
-  flex-direction: column;
+  padding: .5rem;
+  margin: 0;
+
+  @include grid-media($gt-mobile) {
+    padding: 1rem;
+    max-height: 100vh;
+    overflow-y: hidden;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+
 }
 
 /* System Fonts as used by GitHub */
@@ -18,25 +49,44 @@ body {
 }
 
 body {
-  padding: 1rem;
-  margin: 0;
+
+}
+
+.small.caps {
+  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
+}
+
+td.value {
+  max-width: calc(100vw - 4rem); // #janky
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #root {
-  display: grid;
-  grid-template-rows: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  @include grid-media($gt-mobile) {
+    display: grid;
+    grid-template-rows: 100vh;
+
+    display: flex;
+    flex-direction: column;
+  }
+
   > [data-reactroot] {
     //display: grid;
     //grid-template-rows: min-content 40vh min-content;
 
-    display: flex;
-    flex-direction: column;
+    @include grid-media($gt-mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+
 
     > header {
       flex: 1 0 auto;
+      flex-wrap: wrap;
     }
 
     > nav {
@@ -44,14 +94,20 @@ body {
     }
 
     > table {
-      flex: 0 1 auto;
-      display: flex;
-      flex-direction: column;
-      tbody {
+      @include grid-media($gt-mobile) {
         flex: 0 1 auto;
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
+      }
+      tbody {
+        @include grid-media($gt-mobile) {
+          flex: 0 1 auto;
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+
+        }
+
       }
     }
   }
@@ -59,7 +115,9 @@ body {
 
 
 
-
+header {
+  margin-bottom: 1rem;
+}
 
 header {
   display: flex;
@@ -96,7 +154,9 @@ header {
   }*/
 
   .clear-submit {
-    text-align :right;
+    @include grid-media($gt-mobile) {
+      text-align: right;
+    }
     margin-left: auto;
     > * {
       &:not(:last-child) {
@@ -110,15 +170,39 @@ table {
   display: grid;
   thead {
     text-align: left;
+    tr {
+      display: block;
+    }
+  }
+
+  tbody {
+    tr {
+      display: block;
+      @include grid-media($gt-mobile) {
+        display: grid;
+      }
+      td {
+        display: block;
+      }
+    }
   }
   thead, tbody {
-    display: grid;
-    tr {
+    display: block;
+    @include grid-media($gt-mobile) {
       display: grid;
-      grid-template-columns: 2em 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: "select name name key value last-modified";
+    }
+
+    tr {
+
+      @include grid-media($gt-mobile) {
+        display: grid;
+        grid-template-columns: 2em 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "select name name key value last-modified";
+      }
+
     }
     th {
+      display: block;
       &.select {
         grid-area: select;
         text-align: center;
@@ -134,18 +218,29 @@ table {
       }
       &.last-modified {
         grid-area: last-modified;
-        text-align: right;
+        @include grid-media($gt-mobile) {
+          text-align: right;
+        }
+
       }
     }
   }
   tbody {
     border: 1px solid var(--border-color, rgb(220, 220, 220));
     tr {
-      padding: .25rem 0;
-      grid-template-columns: 2em 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: "select name name key value last-modified";
+      padding: .5rem;
+      grid-template-columns: auto;
+      grid-template-areas: "select" "name" "key" "value" "last-modified";
+      @include grid-media($gt-mobile) {
+        padding: .25rem 0;
+        grid-template-columns: 2em 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "select name name key value last-modified";
+      }
       &:focus, &.focused {
-        grid-template-areas: "select name name key value last-modified" "actions actions actions actions actions actions";
+        grid-template-areas: "select" "name" "key" "value" "last-modified" "actions";
+        @include grid-media($gt-mobile) {
+          grid-template-areas: "select name name key value last-modified" "actions actions actions actions actions actions";
+        }
         td.update-setting {
           display: block;
         }
@@ -179,7 +274,10 @@ table {
       }
       &.last-modified {
         grid-area: last-modified;
-        text-align: right;
+
+        @include grid-media($gt-mobile) {
+          text-align: right;
+        }
       }
       &.update-setting {
         --border-color: rgb(210, 210, 210);
@@ -197,21 +295,19 @@ table {
   }
 }
 
-.flexible {
-  display: flex;
-  justify-content: space-around;
-
+.flexible:not(.sometimes) {
+  @extend %flexible;
 }
 
 .flexible.pagination {
   //padding: 1rem 0;
   margin-top: 1rem;
   justify-content: flex-start;
-  > * {
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
+
+  @include grid-media($gt-mobile) {
+    @include flexible;
   }
+
   small:last-child {
     align-self: flex-end;
     margin-left: auto;

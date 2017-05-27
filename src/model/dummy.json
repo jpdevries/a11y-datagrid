@@ -1,0 +1,3242 @@
+[
+   {
+      "key":"access_category_enabled",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Check Category Access"
+   },
+   {
+      "key":"access_context_enabled",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Check Context Access"
+   },
+   {
+      "key":"access_resource_group_enabled",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Check Resource Group Access"
+   },
+   {
+      "key":"allow_forward_across_contexts",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allow Forwarding Across Contexts"
+   },
+   {
+      "key":"allow_manager_login_forgot_password",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allow Forgot Password in Manager Login Screen"
+   },
+   {
+      "key":"allow_multiple_emails",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allow Duplicate Emails for Users"
+   },
+   {
+      "key":"allow_tags_in_post",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allow Tags in POST"
+   },
+   {
+      "key":"archive_with",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Force PCLZip Archives"
+   },
+   {
+      "key":"auto_menuindex",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Menu indexing default"
+   },
+   {
+      "key":"auto_check_pkg_updates",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Automatic Check for Package Updates"
+   },
+   {
+      "key":"auto_check_pkg_updates_cache_expire",
+      "value":"15",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Cache Expiration Time for Automatic Package Updates Check"
+   },
+   {
+      "key":"automatic_alias",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Automatically generate alias"
+   },
+   {
+      "key":"base_help_url",
+      "value":"http:\/\/rtfm.modx.com\/display\/revolution20\/",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Base Help URL"
+   },
+   {
+      "key":"blocked_minutes",
+      "value":"60",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Blocked Minutes"
+   },
+   {
+      "key":"cache_action_map",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Action Map Cache"
+   },
+   {
+      "key":"cache_alias_map",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Context Alias Map Cache"
+   },
+   {
+      "key":"cache_context_settings",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Context Setting Cache"
+   },
+   {
+      "key":"cache_db",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Database Cache"
+   },
+   {
+      "key":"cache_db_expires",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Expiration Time for DB Cache"
+   },
+   {
+      "key":"cache_db_session",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Database Session Cache"
+   },
+   {
+      "key":"cache_db_session_lifetime",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Expiration Time for DB Session Cache"
+   },
+   {
+      "key":"cache_default",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Cacheable default"
+   },
+   {
+      "key":"cache_disabled",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Disable Global Cache Options"
+   },
+   {
+      "key":"cache_expires",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Expiration Time for Default Cache"
+   },
+   {
+      "key":"cache_format",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Caching Format to Use"
+   },
+   {
+      "key":"cache_handler",
+      "value":"xPDOFileCache",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Caching Handler Class"
+   },
+   {
+      "key":"cache_lang_js",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Cache Lexicon JS Strings"
+   },
+   {
+      "key":"cache_lexicon_topics",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Cache Lexicon Topics"
+   },
+   {
+      "key":"cache_noncore_lexicon_topics",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Cache Non-Core Lexicon Topics"
+   },
+   {
+      "key":"cache_resource",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Partial Resource Cache"
+   },
+   {
+      "key":"cache_resource_expires",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Expiration Time for Partial Resource Cache"
+   },
+   {
+      "key":"cache_scripts",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Script Cache"
+   },
+   {
+      "key":"cache_system_settings",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable System Setting Cache"
+   },
+   {
+      "key":"clear_cache_refresh_trees",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Refresh Trees on Site Cache Clear"
+   },
+   {
+      "key":"compress_css",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"2016-01-18 22:29:27",
+      "name":"Use Compressed CSS"
+   },
+   {
+      "key":"compress_js",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"2015-09-11 14:53:40",
+      "name":"Use Compressed JavaScript Libraries"
+   },
+   {
+      "key":"compress_js_max_files",
+      "value":"10",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Maximum JavaScript Files Compression Threshold"
+   },
+   {
+      "key":"compress_js_groups",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"2015-08-27 15:29:50",
+      "name":"Use Grouping When Compressing JavaScript"
+   },
+   {
+      "key":"confirm_navigation",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Confirm Navigation with unsaved changes"
+   },
+   {
+      "key":"container_suffix",
+      "value":"\/",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Container Suffix"
+   },
+   {
+      "key":"context_tree_sort",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Sorting of Contexts in Resource Tree"
+   },
+   {
+      "key":"context_tree_sortby",
+      "value":"rank",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Sort Field of Contexts in Resource Tree"
+   },
+   {
+      "key":"context_tree_sortdir",
+      "value":"ASC",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Sort Direction of Contexts in Resource Tree"
+   },
+   {
+      "key":"cultureKey",
+      "value":"en",
+      "xtype":"modx-combo-language",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Language"
+   },
+   {
+      "key":"date_timezone",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Time Zone"
+   },
+   {
+      "key":"debug",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Debug"
+   },
+   {
+      "key":"default_duplicate_publish_option",
+      "value":"preserve",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Duplicate Resource Publishing Option"
+   },
+   {
+      "key":"default_media_source",
+      "value":"1",
+      "xtype":"modx-combo-source",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Media Source"
+   },
+   {
+      "key":"default_per_page",
+      "value":"20",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Per Page"
+   },
+   {
+      "key":"default_context",
+      "value":"web",
+      "xtype":"modx-combo-context",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Context"
+   },
+   {
+      "key":"default_template",
+      "value":"1",
+      "xtype":"modx-combo-template",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Template"
+   },
+   {
+      "key":"default_content_type",
+      "value":"1",
+      "xtype":"modx-combo-content-type",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default Content Type"
+   },
+   {
+      "key":"editor_css_path",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Path to CSS file"
+   },
+   {
+      "key":"editor_css_selectors",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"CSS Selectors for Editor"
+   },
+   {
+      "key":"emailsender",
+      "value":"mail@devries.jp",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"2015-01-12 18:45:35",
+      "name":"Registration Email From Address"
+   },
+   {
+      "key":"emailsubject",
+      "value":"Your login details",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Registration Email Subject"
+   },
+   {
+      "key":"enable_dragdrop",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Drag\/Drop in Resource\/Element Trees"
+   },
+   {
+      "key":"error_page",
+      "value":"1",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Error Page"
+   },
+   {
+      "key":"failed_login_attempts",
+      "value":"5",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Failed Login Attempts"
+   },
+   {
+      "key":"fe_editor_lang",
+      "value":"en",
+      "xtype":"modx-combo-language",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Front-end Editor Language"
+   },
+   {
+      "key":"feed_modx_news",
+      "value":"http:\/\/feeds.feedburner.com\/modx-announce",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"MODX News Feed URL"
+   },
+   {
+      "key":"feed_modx_news_enabled",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"MODX News Feed Enabled"
+   },
+   {
+      "key":"feed_modx_security",
+      "value":"http:\/\/feeds.feedburner.com\/modxsecurity",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"MODX Security Notices Feed URL"
+   },
+   {
+      "key":"feed_modx_security_enabled",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"MODX Security Feed Enabled"
+   },
+   {
+      "key":"filemanager_path",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"File Manager Path (Deprecated)"
+   },
+   {
+      "key":"filemanager_path_relative",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Is File Manager Path Relative? (Deprecated)"
+   },
+   {
+      "key":"filemanager_url",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"File Manager Url (Deprecated)"
+   },
+   {
+      "key":"filemanager_url_relative",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Is File Manager URL Relative? (Deprecated)"
+   },
+   {
+      "key":"forgot_login_email",
+      "value":"<p>Hello ,<\/p>\n<p>A request for a password reset has been issued for your MODX user. If you sent this, you may follow this link and use this password to login. If you did not send this request, please ignore this email.<\/p>\n\n<p>\n    <strong>Activation Link:<\/strong> ?modahsh=<br \/>\n    <strong>Username:<\/strong> <br \/>\n    <strong>Password:<\/strong> <br \/>\n<\/p>\n\n<p>After you log into the MODX Manager, you can change your password again, if you wish.<\/p>\n\n<p>Regards,<br \/>Site Administrator<\/p>",
+      "xtype":"textarea",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Forgot Login Email"
+   },
+   {
+      "key":"form_customization_use_all_groups",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use All User Group Memberships for Form Customization"
+   },
+   {
+      "key":"forward_merge_excludes",
+      "value":"type,published,class_key",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"sendForward Exclude Fields on Merge"
+   },
+   {
+      "key":"friendly_alias_lowercase_only",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Lowercase Aliases"
+   },
+   {
+      "key":"friendly_alias_max_length",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Maximum Length"
+   },
+   {
+      "key":"friendly_alias_restrict_chars",
+      "value":"pattern",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Character Restriction Method"
+   },
+   {
+      "key":"friendly_alias_restrict_chars_pattern",
+      "value":"\/[\\0\\x0B\\t\\n\\r\\f\\a&=+%#<>\"~:`@\\?\\[\\]\\{\\}\\|\\^'\\\\]\/",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Character Restriction Pattern"
+   },
+   {
+      "key":"friendly_alias_strip_element_tags",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Strip Element Tags"
+   },
+   {
+      "key":"friendly_alias_translit",
+      "value":"none",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Transliteration"
+   },
+   {
+      "key":"friendly_alias_translit_class",
+      "value":"translit.modTransliterate",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Transliteration Service Class"
+   },
+   {
+      "key":"friendly_alias_translit_class_path",
+      "value":"{core_path}components\/",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Transliteration Service Class Path"
+   },
+   {
+      "key":"friendly_alias_trim_chars",
+      "value":"\/.-_",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Trim Characters"
+   },
+   {
+      "key":"friendly_alias_word_delimiter",
+      "value":"-",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Word Delimiter"
+   },
+   {
+      "key":"friendly_alias_word_delimiters",
+      "value":"-_",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Word Delimiters"
+   },
+   {
+      "key":"friendly_urls",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use Friendly URLs"
+   },
+   {
+      "key":"friendly_urls_strict",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use Strict Friendly URLs"
+   },
+   {
+      "key":"global_duplicate_uri_check",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Check for Duplicate URIs Across All Contexts"
+   },
+   {
+      "key":"hidemenu_default",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Hide From Menus Default"
+   },
+   {
+      "key":"inline_help",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Show Inline Help Text for Fields"
+   },
+   {
+      "key":"locale",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Locale"
+   },
+   {
+      "key":"log_level",
+      "value":"1",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Logging Level"
+   },
+   {
+      "key":"log_target",
+      "value":"FILE",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Logging Target"
+   },
+   {
+      "key":"link_tag_scheme",
+      "value":"-1",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"URL Generation Scheme"
+   },
+   {
+      "key":"lock_ttl",
+      "value":"360",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Lock Time-to-Live"
+   },
+   {
+      "key":"mail_charset",
+      "value":"UTF-8",
+      "xtype":"modx-combo-charset",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Mail Charset"
+   },
+   {
+      "key":"mail_encoding",
+      "value":"8bit",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Mail Encoding"
+   },
+   {
+      "key":"mail_use_smtp",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use SMTP"
+   },
+   {
+      "key":"mail_smtp_auth",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Authentication"
+   },
+   {
+      "key":"mail_smtp_helo",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Helo Message"
+   },
+   {
+      "key":"mail_smtp_hosts",
+      "value":"localhost",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Hosts"
+   },
+   {
+      "key":"mail_smtp_keepalive",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Keep-Alive"
+   },
+   {
+      "key":"mail_smtp_pass",
+      "value":"",
+      "xtype":"text-password",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Password"
+   },
+   {
+      "key":"mail_smtp_port",
+      "value":"587",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Port"
+   },
+   {
+      "key":"mail_smtp_prefix",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Connection Prefix"
+   },
+   {
+      "key":"mail_smtp_single_to",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Single To"
+   },
+   {
+      "key":"mail_smtp_timeout",
+      "value":"10",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP Timeout"
+   },
+   {
+      "key":"mail_smtp_user",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"mail",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"SMTP User"
+   },
+   {
+      "key":"manager_date_format",
+      "value":"Y-m-d",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager Date Format"
+   },
+   {
+      "key":"manager_favicon_url",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager Favicon URL"
+   },
+   {
+      "key":"manager_html5_cache",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_manager_html5_cache"
+   },
+   {
+      "key":"manager_js_cache_file_locking",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable File Locking for Manager JS\/CSS Cache"
+   },
+   {
+      "key":"manager_js_cache_max_age",
+      "value":"3600",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager JS\/CSS Compression Cache Age"
+   },
+   {
+      "key":"manager_js_document_root",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager JS\/CSS Compression Document Root"
+   },
+   {
+      "key":"manager_js_zlib_output_compression",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable zlib Output Compression for Manager JS\/CSS"
+   },
+   {
+      "key":"manager_time_format",
+      "value":"g:i a",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager Time Format"
+   },
+   {
+      "key":"manager_direction",
+      "value":"ltr",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager Text Direction"
+   },
+   {
+      "key":"manager_lang_attribute",
+      "value":"en",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager HTML and XML Language Attribute"
+   },
+   {
+      "key":"manager_language",
+      "value":"en",
+      "xtype":"modx-combo-language",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Manager Language"
+   },
+   {
+      "key":"manager_login_url_alternate",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Alternate Manager Login URL"
+   },
+   {
+      "key":"manager_theme",
+      "value":"default",
+      "xtype":"modx-combo-manager-theme",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"2015-11-28 23:06:52",
+      "name":"Manager Theme"
+   },
+   {
+      "key":"manager_week_start",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Week start"
+   },
+   {
+      "key":"modx_browser_default_sort",
+      "value":"name",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Browser Default Sort"
+   },
+   {
+      "key":"modx_charset",
+      "value":"UTF-8",
+      "xtype":"modx-combo-charset",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Character encoding"
+   },
+   {
+      "key":"principal_targets",
+      "value":"modAccessContext,modAccessResourceGroup,modAccessCategory,sources.modAccessMediaSource,modAccessNamespace",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"2015-08-28 15:17:46",
+      "name":"ACL Targets to Load"
+   },
+   {
+      "key":"proxy_auth_type",
+      "value":"BASIC",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"proxy",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Proxy Authentication Type"
+   },
+   {
+      "key":"proxy_host",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"proxy",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Proxy Host"
+   },
+   {
+      "key":"proxy_password",
+      "value":"",
+      "xtype":"text-password",
+      "namespace":"core",
+      "area":"proxy",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Proxy Password"
+   },
+   {
+      "key":"proxy_port",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"proxy",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Proxy Port"
+   },
+   {
+      "key":"proxy_username",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"proxy",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Proxy Username"
+   },
+   {
+      "key":"password_generated_length",
+      "value":"8",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Password Auto-Generated Length"
+   },
+   {
+      "key":"password_min_length",
+      "value":"8",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Minimum Password Length"
+   },
+   {
+      "key":"phpthumb_allow_src_above_docroot",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"2015-01-12 19:12:29",
+      "name":"phpThumb Allow src Above Document Root"
+   },
+   {
+      "key":"phpthumb_cache_maxage",
+      "value":"30",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Max Cache Age"
+   },
+   {
+      "key":"phpthumb_cache_maxsize",
+      "value":"100",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Max Cache Size"
+   },
+   {
+      "key":"phpthumb_cache_maxfiles",
+      "value":"10000",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Max Cache Files"
+   },
+   {
+      "key":"phpthumb_cache_source_enabled",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Cache Source Files"
+   },
+   {
+      "key":"phpthumb_document_root",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"PHPThumb Document Root"
+   },
+   {
+      "key":"phpthumb_error_bgcolor",
+      "value":"CCCCFF",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Error Background Color"
+   },
+   {
+      "key":"phpthumb_error_textcolor",
+      "value":"FF0000",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Error Font Color"
+   },
+   {
+      "key":"phpthumb_error_fontsize",
+      "value":"1",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Error Font Size"
+   },
+   {
+      "key":"phpthumb_far",
+      "value":"C",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Force Aspect Ratio"
+   },
+   {
+      "key":"phpthumb_imagemagick_path",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb ImageMagick Path"
+   },
+   {
+      "key":"phpthumb_nohotlink_enabled",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Hotlinking Disabled"
+   },
+   {
+      "key":"phpthumb_nohotlink_erase_image",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Hotlinking Erase Image"
+   },
+   {
+      "key":"phpthumb_nohotlink_valid_domains",
+      "value":"{http_host},try-catch.s3.amazonaws.com",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"2015-01-12 19:14:16",
+      "name":"phpThumb Hotlinking Valid Domains"
+   },
+   {
+      "key":"phpthumb_nohotlink_text_message",
+      "value":"Off-server thumbnailing is not allowed",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Hotlinking Not Allowed Message"
+   },
+   {
+      "key":"phpthumb_nooffsitelink_enabled",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Offsite Linking Disabled"
+   },
+   {
+      "key":"phpthumb_nooffsitelink_erase_image",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Offsite Linking Erase Image"
+   },
+   {
+      "key":"phpthumb_nooffsitelink_require_refer",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Offsite Linking Require Referrer"
+   },
+   {
+      "key":"phpthumb_nooffsitelink_text_message",
+      "value":"Off-server linking is not allowed",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Offsite Linking Not Allowed Message"
+   },
+   {
+      "key":"phpthumb_nooffsitelink_valid_domains",
+      "value":"{http_host}",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Offsite Linking Valid Domains"
+   },
+   {
+      "key":"phpthumb_nooffsitelink_watermark_src",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Offsite Linking Watermark Source"
+   },
+   {
+      "key":"phpthumb_zoomcrop",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"phpthumb",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"phpThumb Zoom-Crop"
+   },
+   {
+      "key":"publish_default",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Published default"
+   },
+   {
+      "key":"rb_base_dir",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource path"
+   },
+   {
+      "key":"rb_base_url",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource URL"
+   },
+   {
+      "key":"request_controller",
+      "value":"index.php",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"gateway",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Request Controller Filename"
+   },
+   {
+      "key":"request_method_strict",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"gateway",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Strict Request Method"
+   },
+   {
+      "key":"request_param_alias",
+      "value":"q",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"gateway",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Request Alias Parameter"
+   },
+   {
+      "key":"request_param_id",
+      "value":"id",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"gateway",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Request ID Parameter"
+   },
+   {
+      "key":"resolve_hostnames",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resolve hostnames"
+   },
+   {
+      "key":"resource_tree_node_name",
+      "value":"pagetitle",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource Tree Node Field"
+   },
+   {
+      "key":"resource_tree_node_name_fallback",
+      "value":"pagetitle",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource Tree Node Fallback Field"
+   },
+   {
+      "key":"resource_tree_node_tooltip",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource Tree Tooltip Field"
+   },
+   {
+      "key":"richtext_default",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Richtext Default"
+   },
+   {
+      "key":"search_default",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Searchable Default"
+   },
+   {
+      "key":"server_offset_time",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Server offset time"
+   },
+   {
+      "key":"server_protocol",
+      "value":"http",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Server type"
+   },
+   {
+      "key":"session_cookie_domain",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Cookie Domain"
+   },
+   {
+      "key":"session_cookie_lifetime",
+      "value":"604800",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Cookie Lifetime"
+   },
+   {
+      "key":"session_cookie_path",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Cookie Path"
+   },
+   {
+      "key":"session_cookie_secure",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Cookie Secure"
+   },
+   {
+      "key":"session_cookie_httponly",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Cookie HttpOnly"
+   },
+   {
+      "key":"session_gc_maxlifetime",
+      "value":"604800",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Garbage Collector Max Lifetime"
+   },
+   {
+      "key":"session_handler_class",
+      "value":"modSessionHandler",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Handler Class Name"
+   },
+   {
+      "key":"session_name",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Session Name"
+   },
+   {
+      "key":"set_header",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Set HTTP Headers"
+   },
+   {
+      "key":"show_tv_categories_header",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Show \"Categories\" Tabs Header with TVs"
+   },
+   {
+      "key":"signupemail_message",
+      "value":"<p>Hello ,<\/p>\n    <p>Here are your login details for the  MODX Manager:<\/p>\n\n    <p>\n        <strong>Username:<\/strong> <br \/>\n        <strong>Password:<\/strong> <br \/>\n    <\/p>\n\n    <p>Once you log into the MODX Manager at , you can change your password.<\/p>\n\n    <p>Regards,<br \/>Site Administrator<\/p>",
+      "xtype":"textarea",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Sign-up email"
+   },
+   {
+      "key":"site_name",
+      "value":"MODX Revolution",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Site name"
+   },
+   {
+      "key":"site_start",
+      "value":"1",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Site start"
+   },
+   {
+      "key":"site_status",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Site status"
+   },
+   {
+      "key":"site_unavailable_message",
+      "value":"The site is currently unavailable",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Site unavailable message"
+   },
+   {
+      "key":"site_unavailable_page",
+      "value":"0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Site unavailable page"
+   },
+   {
+      "key":"strip_image_paths",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Rewrite browser paths?"
+   },
+   {
+      "key":"symlink_merge_fields",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Merge Resource Fields in Symlinks"
+   },
+   {
+      "key":"topmenu_show_descriptions",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Show Descriptions in Top Menu"
+   },
+   {
+      "key":"tree_default_sort",
+      "value":"menuindex",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource Tree Default Sort Field"
+   },
+   {
+      "key":"tree_root_id",
+      "value":"0",
+      "xtype":"numberfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Tree Root ID"
+   },
+   {
+      "key":"tvs_below_content",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Move TVs Below Content"
+   },
+   {
+      "key":"udperms_allowroot",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allow root"
+   },
+   {
+      "key":"unauthorized_page",
+      "value":"1",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Unauthorized page"
+   },
+   {
+      "key":"upload_files",
+      "value":"txt,html,htm,xml,js,css,zip,gz,rar,z,tgz,tar,htaccess,mp3,mp4,aac,wav,au,wmv,avi,mpg,mpeg,pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,jpeg,png,gif,psd,ico,bmp,odt,ods,odp,odb,odg,odf",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadable File Types"
+   },
+   {
+      "key":"upload_flash",
+      "value":"swf,fla",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadable Flash Types"
+   },
+   {
+      "key":"upload_images",
+      "value":"jpg,jpeg,png,gif,psd,ico,bmp",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadable Image Types"
+   },
+   {
+      "key":"upload_maxsize",
+      "value":"2097152",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"2015-01-12 18:45:35",
+      "name":"Maximum upload size"
+   },
+   {
+      "key":"upload_media",
+      "value":"mp3,wav,au,wmv,avi,mpg,mpeg",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadable Media Types"
+   },
+   {
+      "key":"use_alias_path",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use Friendly Alias Path"
+   },
+   {
+      "key":"use_browser",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"file",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Resource Browser"
+   },
+   {
+      "key":"use_editor",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Rich Text Editor"
+   },
+   {
+      "key":"use_multibyte",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"language",
+      "editedon":"2015-01-12 18:45:35",
+      "name":"Use Multibyte Extension"
+   },
+   {
+      "key":"use_weblink_target",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use WebLink Target"
+   },
+   {
+      "key":"webpwdreminder_message",
+      "value":"<p>Hello ,<\/p>\n\n    <p>To activate your new password click the following link:<\/p>\n\n    <p><\/p>\n\n    <p>If successful you can use the following password to login:<\/p>\n\n    <p><strong>Password:<\/strong> <\/p>\n\n    <p>If you did not request this email then please ignore it.<\/p>\n\n    <p>Regards,<br \/>\n    Site Administrator<\/p>",
+      "xtype":"textarea",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Web Reminder Email"
+   },
+   {
+      "key":"websignupemail_message",
+      "value":"<p>Hello ,<\/p>\n\n    <p>Here are your login details for :<\/p>\n\n    <p><strong>Username:<\/strong> <br \/>\n    <strong>Password:<\/strong> <\/p>\n\n    <p>Once you log into  at , you can change your password.<\/p>\n\n    <p>Regards,<br \/>\n    Site Administrator<\/p>",
+      "xtype":"textarea",
+      "namespace":"core",
+      "area":"authentication",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Web Signup email"
+   },
+   {
+      "key":"welcome_screen",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"2015-01-12 18:45:44",
+      "name":"Show Welcome Screen"
+   },
+   {
+      "key":"welcome_screen_url",
+      "value":"http:\/\/misc.modx.com\/revolution\/welcome.22.html",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Welcome Screen URL"
+   },
+   {
+      "key":"welcome_action",
+      "value":"welcome",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Welcome Action"
+   },
+   {
+      "key":"welcome_namespace",
+      "value":"core",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Welcome Namespace"
+   },
+   {
+      "key":"which_editor",
+      "value":"Redactor",
+      "xtype":"modx-combo-rte",
+      "namespace":"core",
+      "area":"editor",
+      "editedon":"2015-01-12 19:21:15",
+      "name":"Editor to use"
+   },
+   {
+      "key":"which_element_editor",
+      "value":"",
+      "xtype":"modx-combo-rte",
+      "namespace":"core",
+      "area":"editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Editor to use for Elements"
+   },
+   {
+      "key":"xhtml_urls",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"XHTML URLs"
+   },
+   {
+      "key":"settings_version",
+      "value":"2.6.0-dev",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"2017-05-16 22:18:42",
+      "name":"Settings Version"
+   },
+   {
+      "key":"settings_distro",
+      "value":"git",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Settings Distribution"
+   },
+   {
+      "key":"modx_browser_default_viewmode",
+      "value":"grid",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Browser Default View Mode"
+   },
+   {
+      "key":"syncsite_default",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"caching",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Empty Cache default"
+   },
+   {
+      "key":"enable_gravatar",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enable Gravatar"
+   },
+   {
+      "key":"auto_isfolder",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"site",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Set container automatically"
+   },
+   {
+      "key":"access_policies_version",
+      "value":"1.0",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Access Policy Schema Version"
+   },
+   {
+      "key":"ext_debug",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"system",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"ExtJS debug"
+   },
+   {
+      "key":"redactor.lang",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Internationalisation",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Language"
+   },
+   {
+      "key":"redactor.direction",
+      "value":"ltr",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Internationalisation",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Direction"
+   },
+   {
+      "key":"redactor.buttons",
+      "value":"html,|,formatting,|,bold,italic,deleted,|,unorderedlist,orderedlist,outdent,indent,|,image,video,file,table,link,|,alignment,|,horizontalrule",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Buttons"
+   },
+   {
+      "key":"redactor.formattingTags",
+      "value":"p,blockquote,pre,h1,h2,h3,h4",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Formatting Tags"
+   },
+   {
+      "key":"redactor.buttonSource",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Source Button"
+   },
+   {
+      "key":"redactor.buttonFullScreen",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Fullscreen Button"
+   },
+   {
+      "key":"redactor.css",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Stylesheet"
+   },
+   {
+      "key":"redactor.shortcuts",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Shortcuts"
+   },
+   {
+      "key":"redactor.autoresize",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Autoresize"
+   },
+   {
+      "key":"redactor.cleanup",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Cleanup"
+   },
+   {
+      "key":"redactor.paragraphy",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Paragraphy"
+   },
+   {
+      "key":"redactor.convertLinks",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Convert Links"
+   },
+   {
+      "key":"redactor.convertDivs",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Convert Divs"
+   },
+   {
+      "key":"redactor.tabindex",
+      "value":"0",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Tab Index"
+   },
+   {
+      "key":"redactor.minHeight",
+      "value":"200",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Min Height"
+   },
+   {
+      "key":"redactor.file_mediasource",
+      "value":"",
+      "xtype":"modx-combo-source",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Source for Files"
+   },
+   {
+      "key":"redactor.colors",
+      "value":"#ffffff,#000000,#eeece1,#1f497d,#4f81bd,#c0504d,#9bbb59,#8064a2,#4bacc6,#f79646,#ffff00,#f2f2f2,#7f7f7f,#ddd9c3,#c6d9f0,#dbe5f1,#f2dcdb,#ebf1dd,#e5e0ec,#dbeef3,#fdeada,#fff2ca,#d8d8d8,#595959,#c4bd97,#8db3e2,#b8cce4,#e5b9b7,#d7e3bc,#ccc1d9,#b7dde8,#fbd5b5,#ffe694,#bfbfbf,#3f3f3f,#938953,#548dd4,#95b3d7,#d99694,#c3d69b,#b2a2c7,#b7dde8,#fac08f,#f2c314,#a5a5a5,#262626,#494429,#17365d,#366092,#953734,#76923c,#5f497a,#92cddc,#e36c09,#c09100,#7f7f7f,#0c0c0c,#1d1b10,#0f243e,#244061,#632423,#4f6128,#3f3151,#31859b,#974806,#7f6000",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Colors"
+   },
+   {
+      "key":"redactor.enterKey",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Enter Key"
+   },
+   {
+      "key":"redactor.cleanStyleOnEnter",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Clean Style on Enter"
+   },
+   {
+      "key":"redactor.wym",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"WYM (Visual Structure)"
+   },
+   {
+      "key":"redactor.tabAsSpaces",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Tab as Spaces"
+   },
+   {
+      "key":"redactor.linkProtocol",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Protocol"
+   },
+   {
+      "key":"redactor.placeholder",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Placeholder"
+   },
+   {
+      "key":"redactor.linebreaks",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Linebreaks"
+   },
+   {
+      "key":"redactor.allowedTags",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allowed Tags"
+   },
+   {
+      "key":"redactor.deniedTags",
+      "value":"html,head,link,body,meta,script,style,applet",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Denied Tags"
+   },
+   {
+      "key":"redactor.focusEnd",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Focus End"
+   },
+   {
+      "key":"redactor.focus",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Focus"
+   },
+   {
+      "key":"redactor.linkEmail",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Email Links"
+   },
+   {
+      "key":"redactor.linkAnchor",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Anchor Links"
+   },
+   {
+      "key":"redactor.scrollTarget",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Scroll Target"
+   },
+   {
+      "key":"redactor.visual",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Visual"
+   },
+   {
+      "key":"redactor.marginFloatLeft",
+      "value":"0 10px 10px 0",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Left Float Margin"
+   },
+   {
+      "key":"redactor.marginFloatRight",
+      "value":"0 0 10px 10px",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Right Float Margin"
+   },
+   {
+      "key":"redactor.mediasource",
+      "value":"",
+      "xtype":"modx-combo-source",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Source"
+   },
+   {
+      "key":"redactor.image_upload_path",
+      "value":"assets\/uploads\/",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Upload Path"
+   },
+   {
+      "key":"redactor.image_browse_path",
+      "value":"assets\/uploads\/",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Browse Path"
+   },
+   {
+      "key":"redactor.file_upload_path",
+      "value":"assets\/uploads\/",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"File Upload Path"
+   },
+   {
+      "key":"redactor.file_browse_path",
+      "value":"assets\/uploads\/",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"File Browse Path"
+   },
+   {
+      "key":"redactor.activeButtonsStates",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Active Buttons States"
+   },
+   {
+      "key":"redactor.browse_files",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Browse Files"
+   },
+   {
+      "key":"redactor.date_images",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Date Images"
+   },
+   {
+      "key":"redactor.date_files",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Date Files"
+   },
+   {
+      "key":"redactor.activeButtons",
+      "value":"deleted,italic,bold,underline,unorderedlist,orderedlist,alignleft,aligncenter,alignright,justify",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Active Buttons"
+   },
+   {
+      "key":"redactor.typeahead.include_introtext",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Resource Typeahead",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Include Introtext"
+   },
+   {
+      "key":"redactor.prefetch_ttl",
+      "value":"3600000",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Resource Typeahead",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Prefetch TTL"
+   },
+   {
+      "key":"redactor.linkResource",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Resource Links"
+   },
+   {
+      "key":"redactor.cleanFileNames",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Clean Files Names"
+   },
+   {
+      "key":"redactor.dynamicThumbs",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Dynamic Thumbs"
+   },
+   {
+      "key":"redactor.clipsJson",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Clips JSON"
+   },
+   {
+      "key":"redactor.stylesJson",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Styles JSON"
+   },
+   {
+      "key":"redactor.additionalPlugins",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Additional Plugins"
+   },
+   {
+      "key":"redactor.fullpage",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Fullpage"
+   },
+   {
+      "key":"redactor.dragUpload",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Drag Upload"
+   },
+   {
+      "key":"redactor.convertImageLinks",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Convert Image Links"
+   },
+   {
+      "key":"redactor.convertVideoLinks",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Convert Video Links"
+   },
+   {
+      "key":"redactor.paragraphize",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Paragraphize"
+   },
+   {
+      "key":"redactor.removeComments",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Remove Comments"
+   },
+   {
+      "key":"redactor.removeEmptyTags",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Remove Empty Tags"
+   },
+   {
+      "key":"redactor.sanitizePattern",
+      "value":"\/([[:alnum:]_\\.-]*)\/",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Sanitize Pattern"
+   },
+   {
+      "key":"redactor.sanitizeReplace",
+      "value":"_",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Sanitize Replace"
+   },
+   {
+      "key":"redactor.linkSize",
+      "value":"50",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Link Size"
+   },
+   {
+      "key":"redactor.advAttrib",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Advanced Attributes"
+   },
+   {
+      "key":"redactor.linkNofollow",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Link No-Follow"
+   },
+   {
+      "key":"redactor.typewriter",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Typewriter"
+   },
+   {
+      "key":"redactor.buttonsHideOnMobile",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Hidden Mobile Buttons"
+   },
+   {
+      "key":"redactor.toolbarOverflow",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Toolbar Overflow"
+   },
+   {
+      "key":"redactor.imageTabLink",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Tab Link"
+   },
+   {
+      "key":"redactor.cleanSpaces",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Clean Spaces"
+   },
+   {
+      "key":"redactor.predefinedLinks",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Predefined Links"
+   },
+   {
+      "key":"redactor.shortcutsAdd",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Additional Shortcuts"
+   },
+   {
+      "key":"redactor.commemorateRebecca",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Commemorate Rebecca"
+   },
+   {
+      "key":"redactor.toolbarFixed",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Toolbar Fixed"
+   },
+   {
+      "key":"redactor.pastePlainText",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Paste Plain Text"
+   },
+   {
+      "key":"friendly_alias_realtime",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"FURL Alias Real-Time"
+   },
+   {
+      "key":"use_frozen_parent_uris",
+      "value":"0",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"furls",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Use Frozen Parent URIs"
+   },
+   {
+      "key":"modx_browser_tree_hide_files",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Browser Tree Hide Files"
+   },
+   {
+      "key":"modx_browser_tree_hide_tooltips",
+      "value":"1",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Browser Tree Hide Tooltips"
+   },
+   {
+      "key":"default_username",
+      "value":"(anonymous)",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"session",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Default username"
+   },
+   {
+      "key":"mgr_tree_icon_context",
+      "value":"tree-context",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Context tree icon"
+   },
+   {
+      "key":"mgr_source_icon",
+      "value":"icon-folder-open-o",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Media Source icon"
+   },
+   {
+      "key":"main_nav_parent",
+      "value":"topnav",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Main menu parent"
+   },
+   {
+      "key":"user_nav_parent",
+      "value":"usernav",
+      "xtype":"textfield",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"User menu parent"
+   },
+   {
+      "key":"manager_use_fullname",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"core",
+      "area":"manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Show fullname in manager header "
+   },
+   {
+      "key":"redactor.linkTooltip",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Observe Links"
+   },
+   {
+      "key":"redactor.imageEditable",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Observe Images"
+   },
+   {
+      "key":"redactor.imageResizable",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Resizable"
+   },
+   {
+      "key":"redactor.imageLink",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Link"
+   },
+   {
+      "key":"redactor.imagePosition",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Position"
+   },
+   {
+      "key":"redactor.buttonsHide",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Toolbar",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Hidden Buttons"
+   },
+   {
+      "key":"redactor.formattingAdd",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Formatting Add"
+   },
+   {
+      "key":"redactor.tabifier",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Tabifier"
+   },
+   {
+      "key":"redactor.replaceTags",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.replaceTags"
+   },
+   {
+      "key":"redactor.replaceStyles",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Replace Styles"
+   },
+   {
+      "key":"redactor.removeDataAttr",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Remove Data Attribute"
+   },
+   {
+      "key":"redactor.removeAttr",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Remove Attribute"
+   },
+   {
+      "key":"redactor.allowedAttr",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Allowed Attribute"
+   },
+   {
+      "key":"redactor.dragImageUpload",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Drag Image Upload"
+   },
+   {
+      "key":"redactor.dragFileUpload",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Drag File Upload"
+   },
+   {
+      "key":"redactor.replaceDivs",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Replace Divs"
+   },
+   {
+      "key":"redactor.preSpaces",
+      "value":"4",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Markup",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Pre Spaces"
+   },
+   {
+      "key":"redactor.parse_parent_path",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Parse Parent Path"
+   },
+   {
+      "key":"redactor.increment_file_names",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Increment File Names"
+   },
+   {
+      "key":"redactor.parse_parent_path_height",
+      "value":"10",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Parse Parent Path Height"
+   },
+   {
+      "key":"redactor.baseurls_mode",
+      "value":"relative",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.baseurls_mode"
+   },
+   {
+      "key":"redactor.showDimensionsOnResize",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Show Dimensions on Resize"
+   },
+   {
+      "key":"redactor.plugin_counter",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Counter"
+   },
+   {
+      "key":"redactor.plugin_fontcolor",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Font Color"
+   },
+   {
+      "key":"redactor.plugin_fontfamily",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Font Family"
+   },
+   {
+      "key":"redactor.plugin_fontsize",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Font Size"
+   },
+   {
+      "key":"redactor.plugin_limiter",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Limiter"
+   },
+   {
+      "key":"redactor.plugin_table",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Table"
+   },
+   {
+      "key":"redactor.plugin_textdirection",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Text Direction"
+   },
+   {
+      "key":"redactor.plugin_video",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Video"
+   },
+   {
+      "key":"redactor.plugin_replacer",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Replace Text"
+   },
+   {
+      "key":"redactor.plugin_syntax",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Syntax Highlighter Plugin"
+   },
+   {
+      "key":"redactor.plugin_speek",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Listen Plugin"
+   },
+   {
+      "key":"redactor.plugin_contrast",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Contrast Plugin"
+   },
+   {
+      "key":"redactor.plugin_eureka",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Eureka Plugin"
+   },
+   {
+      "key":"redactor.plugin_eureka_shivie9",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Eureka Plugin Shiv IE 9"
+   },
+   {
+      "key":"redactor.eurekaUpload",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Media",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Eureka Upload"
+   },
+   {
+      "key":"redactor.plugin_zoom",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Zoom Plugin"
+   },
+   {
+      "key":"redactor.plugin_download",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Download Plugin"
+   },
+   {
+      "key":"redactor.plugin_imagepx",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Edit Dimensions Plugin"
+   },
+   {
+      "key":"redactor.plugin_imageurl",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Image Image Plugin"
+   },
+   {
+      "key":"redactor.plugin_breadcrumb",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Breadcrumb Plugin"
+   },
+   {
+      "key":"redactor.plugin_norphan",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Norphan Plugin"
+   },
+   {
+      "key":"redactor.plugin_baseurls",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Base URLS Plugins"
+   },
+   {
+      "key":"redactor.textexpander",
+      "value":"",
+      "xtype":"textarea",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Text Expander"
+   },
+   {
+      "key":"redactor.speechPitch",
+      "value":"1",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.speechPitch"
+   },
+   {
+      "key":"redactor.speechRate",
+      "value":"1",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.speechRate"
+   },
+   {
+      "key":"redactor.speechVolume",
+      "value":"1",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.speechVolume"
+   },
+   {
+      "key":"redactor.speechVoice",
+      "value":"",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.speechVoice"
+   },
+   {
+      "key":"redactor.counterWPM",
+      "value":"275",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Advanced",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Counter Words Per Minute"
+   },
+   {
+      "key":"redactor.codemirror",
+      "value":"1",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"CodeMirror"
+   },
+   {
+      "key":"redactor.plugin_uploadcare",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Plugin",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadcare Plugin"
+   },
+   {
+      "key":"redactor.uploadcare_pub_key",
+      "value":"demopublickey",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Uploadcare",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redactor.uploadcare_pub_key"
+   },
+   {
+      "key":"redactor.uploadcare_locale",
+      "value":"en",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Uploadcare",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadcare Locale"
+   },
+   {
+      "key":"redactor.uploadcare_crop",
+      "value":"free",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Uploadcare",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadcare Crop"
+   },
+   {
+      "key":"redactor.uploadcare_tabs",
+      "value":"all",
+      "xtype":"textfield",
+      "namespace":"redactor",
+      "area":"Uploadcare",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Uploadcare Tabs"
+   },
+   {
+      "key":"redactor.loadIntrotext",
+      "value":"",
+      "xtype":"modx-combo-boolean",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Load Introtext"
+   },
+   {
+      "key":"redactor.limiter",
+      "value":"150",
+      "xtype":"numberfield",
+      "namespace":"redactor",
+      "area":"Editor",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"Limiter Character Count"
+   },
+   {
+      "key":"redirector.track_uri_updates",
+      "value":"",
+      "xtype":"combo-boolean",
+      "namespace":"redirector",
+      "area":"Manager",
+      "editedon":"-001-11-30 00:00:00",
+      "name":"setting_redirector.track_uri_updates"
+   }
+]

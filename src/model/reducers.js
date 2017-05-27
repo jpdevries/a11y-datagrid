@@ -9,10 +9,7 @@ const initialNamespacesState = {
     'core'
   ],
   "Extras": [
-    'ace',
-    'contentblocks',
-    'moregallery',
-    'redactor',
+    'redactor'
   ]
 };
 
@@ -33,20 +30,28 @@ const initialSettingsState = (() => {
 
   console.log('namespaces', namespaces);
 
-  const settings = [];
+  let settings = require('./dummy.json').map((setting) => (
+    Object.assign({
+      name: setting.key,
+      uuid: setting.key
+    }, setting)
+  ));
 
-  for(let i = 0; i < 1000; i++) {
+  console.log(settings);
+
+  /*for(let i = 0; i < 1000; i++) {
     const name = faker.lorem.word();
     settings.push({
       name: name,
-      settingKey: name.toLowerCase(),
+      uuid: name.toLowerCase(),
       key: i,
-      uid: i,
+      uuid: i,
       value: true,
       lastModified: new Date(),
       namespace: namespaces[Math.floor(Math.random() * namespaces.length)]
     })
   }
+  */
 
   return settings;
 })();
@@ -59,7 +64,7 @@ function settingsReducer(state, action) {
     case actions.DELETE_SETTING:
     console.log('delete setting', action);
     return state.filter((setting) => (
-      setting.uid !== action.uid
+      setting.uuid !== action.uuid
     ));
     break;
   }
@@ -68,7 +73,9 @@ function settingsReducer(state, action) {
 }
 
 const initialViewReducer = {
-  namespace: 'core'
+  namespace: 'core',
+  area: undefined,
+  checkedSettings: []
 };
 
 function viewReducer(state, action) {
@@ -91,31 +98,73 @@ const initialNamespaceSettings = initialSettingsState.filter((setting) => (
 function namespaceSettingsReducer(state, action) {
   state = state || initialNamespaceSettings;
 
-  console.log(action.type);
+  let r = state;
+  console.log(action);
 
   switch(action.type) {
     case actions.UPDATE_VIEW:
-    return settings.filter((setting) => (
-      setting.namespace === action.view.namespace
-    ));
+    if(action.view.namespace) {
+      return settings.filter((setting) => (
+        setting.namespace === action.view.namespace
+      ));
+    }
+
+    if(action.view.area) {
+      return settings.filter((setting) => (
+        setting.area === action.view.area
+      ));
+    }
+
+    if(action.view.xtype) {
+      return settings.filter((setting) => (
+        setting.xtype === action.view.xtype
+      ));
+    }
+
 
     case actions.DELETE_SETTING:
     console.log('delete setting', action);
     return settings.filter((setting) => (
-      setting.uid !== action.uid
+      setting.uuid !== action.uuid
     ));
+
   }
 
   return state;
 }
 
+const initialAreasState = (() => {
+  let areas = require('./dummy.json').map((setting) => (
+    setting.area
+  ));
+  return [...new Set(areas)];
+})();
 
+function areasReducer(state, action) {
+  state = state || initialAreasState;
 
+  return state;
+}
+
+const initialXtypesState = (() => {
+  let xtypes = require('./dummy.json').map((setting) => (
+    setting.xtype
+  ));
+  return [...new Set(xtypes)];
+})();
+
+function xtypesReducer(state, action) {
+  state = state || initialXtypesState;
+
+  return state;
+}
 
 
 export const CombinedReducers = combineReducers({
   settings: settingsReducer,
   namespaceSettings: namespaceSettingsReducer,
   namespaces: namespacesReducer,
-  view: viewReducer
+  areas: areasReducer,
+  view: viewReducer,
+  xtypes: xtypesReducer
 });

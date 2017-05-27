@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+/bower_components
+
+src/scss/bourbon
+src/scss/neat
 
 # testing
 /coverage

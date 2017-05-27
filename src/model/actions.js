@@ -7,9 +7,9 @@ export const updateView = function(view) {
 }
 
 export const DELETE_SETTING = 'delete_setting';
-export const deleteSetting = function(uid) {
+export const deleteSetting = function(uuid) {
   return {
     type: DELETE_SETTING,
-    uid: uid
+    uuid: uuid
   }
 }

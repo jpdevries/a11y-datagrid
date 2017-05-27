@@ -4,3 +4,44 @@ WIP.
 
 ## Demo
 [Try the demo](http://a11y-datagrid.markup.tips/).
+
+## Goals
+ - Accessible Data Grid
+    - Keyboard
+    - Screen Reader
+    - Mobile
+    - Vision
+      - Low Vision
+      - Contrast
+      - Reduced Motion
+
+## REST API
+A robust rest API allows the data grid to be browsed by the URL all the way down to targeting specific rows, filter, and pagination settings.
+
+### System Settings
+
+| Route  | HTTP Verb | Description |
+| ------------- | ------------- | ------------- |
+| `settings/:namespace`  | `GET`  | Retrieve a list of settings in a given namespace
+| `settings/:namespace?q=foo`  | `GET`  | Search for foo in a given namespace
+| `settings/:namespace/:area`  | `GET`  | Retrieve a list of settings in a given area of a given namespace
+| `settings/:namespace/:area/:xtype`  | `GET`  | Retrieve a list of settings of a certain xtype in a given area of a given namespace
+| `settings/:namespace/?p2`  | `GET`  | Retrieve the second page of a list of settings in a given namespace
+| `settings/:namespace/?s=editedon`  | `GET`  | Retrieve a list of settings in a given namespace sorted by editedon
+| `settings/:namespace/?s=editedon&d=desc`  | `GET`  | Retrieve a list of settings in a given namespace sorted by editedon in descending order
+| `settings/:namespace/?p2&pp=50`  | `GET`  | Showing 50 settings per page, Retrieve the second page of a list of settings in a given namespace
+| `settings/:namespace/#site_status`  | `GET`  | Retrieve a list of settings in a given namespace, set target to `#site_status`
+
+### Resources
+
+WIP. Support options like:
+ - publishedon
+ - hidden from menus
+ - published
+ - parent
+
+| Route  | HTTP Verb | Description |
+| ------------- | ------------- | ------------- |
+| `resources/:context`  | `GET`  | Retrieve a list of resources in a given context
+| `resources/:context/:template`  | `GET`  | Retrieve a list of resources of a given template in a given context
+| `resources/:context/:template`  | `POST`  | Create a new resource of a given template in a given context

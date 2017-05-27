@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default function Pagination(props) {
   return (
-    <nav className="flexible pagination">
+    <nav className="sometimes flexible pagination">
       <button>First Page</button>
       <button>Previous Page</button>
 
@@ -21,7 +21,7 @@ export default function Pagination(props) {
       <button>Refresh</button>
 
       <div>
-        <label htmlFor="per-page">Per Page</label>
+        <label htmlFor="per-page">Per Page&ensp;</label>
         <input type="number" id="per-page" name="per-page" value="30" min="10" step="1" />
       </div>
 

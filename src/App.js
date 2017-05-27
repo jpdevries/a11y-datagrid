@@ -28,13 +28,15 @@ class App extends Component {
           settings: state.settings,
           namespaces: state.namespaces,
           view: state.view,
-          filteredSettings: state.namespaceSettings
+          filteredSettings: state.namespaceSettings,
+          areas: state.areas,
+          xtypes: state.xtypes
         }
     })((SettingsGrid)); // shoot it up with some i18n
   }
 
   render(props) {
-    
+
     return (
       <Provider store={store}>
         <this.SettingsController {...props} />
