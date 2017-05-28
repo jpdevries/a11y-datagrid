@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import * as actions from './model/actions';
+import store from './model/store';
+
 import Header from './Header';
 import DataGrid from './DataGrid';
 import ModalCreateSetting from './ModalCreateSetting';
@@ -11,6 +14,10 @@ export default class SettingsGrid extends Component {
     this.state = {
       search: undefined
     }
+  }
+
+  componentWillMount() {
+    store.dispatch(actions.updateView(this.props.view)); // kinda #janky
   }
 
   handleSearch = (search) => {
@@ -26,9 +33,11 @@ export default class SettingsGrid extends Component {
 
     return (
       <div className="App">
+
         <Header {...props} onSearch={this.handleSearch} />
-        <DataGrid {...props} search={this.state.search} />
         <Pagination {...props} />
+        <DataGrid {...props} search={this.state.search} />
+
       </div>
     );
   }

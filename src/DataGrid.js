@@ -9,23 +9,23 @@ export default class DataGrid extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    /*this.state = {
       checkedSettings: []
-    }
+    }*/
   }
 
   checkSetting = (uuid, checked) => {
-    console.log('checkSetting', uuid, checked);
-    let checkedSettings = this.state.checkedSettings;
+    //console.log('checkSetting', uuid, checked);
+    let checkedSettings = this.props.view.checkedSettings;
     if(checked) {
       checkedSettings.push(uuid);
     } else {
       checkedSettings = checkedSettings.filter((setting) => (setting !== uuid));
     }
     setTimeout(() => {
-      this.setState({
+      /*this.setState({
         checkedSettings
-      });
+      });*/
       store.dispatch(actions.updateView({
         checkedSettings
       }));
@@ -35,6 +35,8 @@ export default class DataGrid extends Component {
   render() {
     const props = this.props,
     state = this.state;
+
+    const perPage = !isNaN(props.view.perPage) ? props.view.perPage : 10;
 
     console.log(props);
     console.log(state);
@@ -51,9 +53,12 @@ export default class DataGrid extends Component {
       })
     }
 
-    const rows = filteredSettings.map((setting, index) => (
+    let rows = filteredSettings.map((setting, index) => (
       <DataGridRow key={`${setting.key}`} {...setting} checkSetting={this.checkSetting} />
     ));
+
+    console.log((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
+    rows = rows.slice((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
 
     return (
       <table>
@@ -61,7 +66,7 @@ export default class DataGrid extends Component {
           <tr>
             <th className="select">
             <label htmlFor="check_all">
-              <span className="visually-hidden">Select</span>
+              <span className="visually-hidden" id="select-cell">Select</span>
               <input type="checkbox" name="check_all" id="check_all" onChange={(event) => {
                 const inputs = document.querySelectorAll('input[name="checked_settings"]'),
                 checkedSettings = (event.target.checked) ? filteredSettings : [];
@@ -70,13 +75,13 @@ export default class DataGrid extends Component {
                   inputs[i].checked = event.target.checked;
                 }
 
-                this.setState({
+                /*this.setState({
                   checkedSettings: checkedSettings
-                });
+                });*/
 
                 store.dispatch(actions.updateView({
-                  //checkedSettings
-                  foo: 'bar'
+                  checkedSettings
+
                 }));
 
               }} />

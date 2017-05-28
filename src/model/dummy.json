@@ -3229,14 +3229,5 @@
       "area":"Editor",
       "editedon":"-001-11-30 00:00:00",
       "name":"Limiter Character Count"
-   },
-   {
-      "key":"redirector.track_uri_updates",
-      "value":"",
-      "xtype":"combo-boolean",
-      "namespace":"redirector",
-      "area":"Manager",
-      "editedon":"-001-11-30 00:00:00",
-      "name":"setting_redirector.track_uri_updates"
    }
 ]

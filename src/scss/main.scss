@@ -133,7 +133,11 @@ header {
   }
 
   .search {
-    flex-basis: 20em;
+    flex-basis: 12em;
+    flex-grow: 1;
+    max-width:18em;
+    padding-left:1rem;
+    padding-right:1rem;
     display: flex;
     > div {
       flex-grow: 1;
@@ -295,6 +299,13 @@ table {
   }
 }
 
+.namespace, .area, .xtype {
+  @include grid-media($gt-mobile) {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}
+
 .flexible:not(.sometimes) {
   @extend %flexible;
 }
@@ -306,6 +317,7 @@ table {
 
   @include grid-media($gt-mobile) {
     @include flexible;
+    order: 3;
   }
 
   small:last-child {

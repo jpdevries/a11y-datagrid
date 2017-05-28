@@ -13,3 +13,11 @@ export const deleteSetting = function(uuid) {
     uuid: uuid
   }
 }
+
+export const DELETE_SETTINGS = 'delete_settings';
+export const deleteSettings = function(uuids) {
+  return {
+    type: DELETE_SETTINGS,
+    uuids: uuids
+  }
+}

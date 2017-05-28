@@ -50,13 +50,13 @@ export default class DataGridRow extends Component {
       }}>
         <td className="select">
           <label htmlFor={`checked_${props.uuid}`}>
-            <input type="checkbox" name={`checked_settings`} id={`checked_${props.uuid}`} onChange={(event) => {
+            <input aria-labelledby="select-cell" aria-describedby={`select_${props.uuid}`} type="checkbox" name={`checked_settings[]`} id={`checked_${props.uuid}`} onChange={(event) => {
               console.log(event.target.checked);
               props.checkSetting(props.uuid, event.target.checked);
             }} />
           </label>
         </td>
-        <td className="name" data-xtype={props.xtype}>{props.name}</td>
+        <td className="name" data-xtype={props.xtype}><span id={`select_${props.uuid}`}>{props.name}</span></td>
         <td className="key"><code>{props.uuid}</code></td>
         <td className="value">
           <code>{this.formatValue()}</code>

@@ -22,7 +22,8 @@ export default class Header extends Component {
 
       const options = namespaces[key].map((namespace) => (
         <option key={namespace}>{namespace}</option>
-      ))
+      ));
+
 
       return (
         <optgroup key={key} label={key}>
@@ -31,12 +32,25 @@ export default class Header extends Component {
       );
     });
 
-    const areas = props.areas.map((area) => (
-      <option key={area} value={area}>{area}</option>
+    function tallyByArea(area) {
+      //console.log('tally', props.filteredSettings);
+      let t = 0;
+      props.settings.filter((setting) => (
+        setting.namespace === props.view.namespace
+      )).forEach((setting) => {
+        if(setting.area == area) t++
+      });
+      return t;
+    }
+
+    const areas = props.areas.map((area) => ( // .filter((area) => (tallyByArea(area)))
+      <option disabled={!tallyByArea(area)} key={area} value={area}>{area} ({tallyByArea(area)})</option>
     )),
     xtypes = props.xtypes.map((xtype) => (
       <option key={xtype} value={xtype}>{xtype}</option>
     ));
+
+    const allLength = props.settings.filter((setting) => (setting.namespace == props.view.namespace)).length;
 
     return (
       <header>
@@ -54,7 +68,7 @@ export default class Header extends Component {
         }}>Invert Selection</button>
 
         <button hidden={!(props.view.checkedSettings.length)} disabled={!(props.view.checkedSettings.length)} onClick={(event) => {
-
+          store.dispatch(actions.deleteSettings(props.view.checkedSettings));
         }}>Delete{props.view.checkedSettings.length ? ` ${props.view.checkedSettings.length}` : ''} Item{props.view.checkedSettings.length > 1 ? 's' : ''}</button>
 
       </div>
@@ -62,7 +76,8 @@ export default class Header extends Component {
         <label htmlFor="namespace"><span className="visually-hidden">Filter by </span>Namespace&ensp;</label>
         <select name="namespace" id="namespace" value={props.view.namespace} onChange={(event) => {
           store.dispatch(actions.updateView({
-            namespace: event.target.value
+            namespace: event.target.value,
+            area: props.view.area
           }));
         }}>
           {optgroups}
@@ -72,10 +87,11 @@ export default class Header extends Component {
         <label htmlFor="area"><span className="visually-hidden">Filter by </span>Area&ensp;</label>
         <select name="area" id="area" value={props.view.area} onChange={(event) => {
           store.dispatch(actions.updateView({
-            area: event.target.value
+            area: event.target.value,
+            namespace: props.view.namespace
           }))
         }}>
-          <option value="">All</option>
+          <option value="">All ({allLength})</option>
           {areas}
         </select>
       </div>
@@ -83,7 +99,9 @@ export default class Header extends Component {
         <label htmlFor="xtype"><span className="visually-hidden">Filter by </span><span className="small caps">xtype</span>&ensp;</label>
         <select name="xtype" id="xtype" value={props.view.xtype} onChange={(event) => {
           store.dispatch(actions.updateView({
-            xtype: event.target.value
+            xtype: event.target.value,
+            namespace: props.view.namespace,
+            area: props.view.area
           }))
         }}>
           <option value="">All</option>
@@ -102,14 +120,16 @@ export default class Header extends Component {
       <div className="clear-submit">
         <button type="reset" onClick={(event) => {
           store.dispatch(actions.updateView({
-            area: ''
+            area: '',
+            namespace: props.view.namespace,
+            xtype: props.view.xtype
           }));
           this.setState({
             search: ''
           });
           props.onSearch(event.target.value);
         }}>Clear Filters</button>
-        <button type="submit">Submit</button>
+
       </div>
       </header>
     );
