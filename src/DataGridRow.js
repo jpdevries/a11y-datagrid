@@ -20,6 +20,7 @@ export default class DataGridRow extends Component {
 
     switch(props.xtype) {
       case 'combo-boolean':
+      case 'modx-combo-boolean':
       return (value == "1" ) ? "Yes" : "No";
       break;
 

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
+import { BrowserRouter, withRouter } from 'react-router-dom';
+
+
 import store from './model/store';
 import actions from './model/actions';
 
 import logo from './logo.svg';
 import SettingsGrid from './SettingsGrid';
-
-
 
 import { createStore } from 'redux';
 
@@ -23,7 +24,7 @@ class App extends Component {
     });
   }
   componentWillMount() {
-    this.SettingsController = connect(function(state, props) { // todo list
+    this.SettingsController = (connect(function(state, props) { // todo list
         return {
           settings: state.settings,
           namespaces: state.namespaces,
@@ -32,15 +33,17 @@ class App extends Component {
           areas: state.areas,
           xtypes: state.xtypes
         }
-    })((SettingsGrid)); // shoot it up with some i18n
+    })((SettingsGrid))); 
   }
 
   render(props) {
 
     return (
-      <Provider store={store}>
-        <this.SettingsController {...props} />
-      </Provider>
+
+        <Provider store={store}>
+          <this.SettingsController {...props} />
+        </Provider>
+
     );
   }
 }

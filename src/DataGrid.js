@@ -14,6 +14,34 @@ export default class DataGrid extends Component {
     }*/
   }
 
+  componentWillMount() {
+    console.log('DataGrid componentWillMount', this.props);
+    let view = this.props.view;
+    if(this.props.match.params.namespace) {
+      view = Object.assign({}, view, {
+        namespace: this.props.match.params.namespace,
+        area: this.props.match.params.area,
+        xtype: this.props.match.params.xtype,
+      });
+      store.dispatch(actions.updateView(view));
+    }
+
+  }
+
+  componentWillUpdate() {
+    const props = this.props;
+
+    //console.log('componentWillUpdate', props, props.match.params.namespace, props.view.namespace);
+    /*if(props.match.params.namespace) {
+      if(props.match.params.namespace !== props.view.namespace) {
+        console.log('updating to', props.match.params.namespace);
+        store.dispatch(actions.updateView(Object.assign({}, props.view, {
+          namespace: props.match.params.namespace
+        })));
+      }
+    }*/
+  }
+
   checkSetting = (uuid, checked) => {
     //console.log('checkSetting', uuid, checked);
     let checkedSettings = this.props.view.checkedSettings;
@@ -38,10 +66,11 @@ export default class DataGrid extends Component {
 
     const perPage = !isNaN(props.view.perPage) ? props.view.perPage : 10;
 
-    console.log(props);
-    console.log(state);
+    //console.log(props);
+    //console.log(state);
 
     let filteredSettings = props.filteredSettings;
+    //console.log('filteredSettings', filteredSettings);
 
     if(props.search) {
       const search = props.search.toLowerCase();
@@ -66,7 +95,7 @@ export default class DataGrid extends Component {
           <tr>
             <th className="select">
             <label htmlFor="check_all">
-              <span className="visually-hidden" id="select-cell">Select</span>
+
               <input type="checkbox" name="check_all" id="check_all" onChange={(event) => {
                 const inputs = document.querySelectorAll('input[name="checked_settings"]'),
                 checkedSettings = (event.target.checked) ? filteredSettings : [];
@@ -84,7 +113,8 @@ export default class DataGrid extends Component {
 
                 }));
 
-              }} />
+              }} /> 
+              <span className="sometimes visually-hidden" id="select-cell">Select All</span>
             </label>
             </th>
             <th className="name">Name</th>

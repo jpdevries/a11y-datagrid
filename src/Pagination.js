@@ -28,12 +28,22 @@ export default function Pagination(props) {
 
   return (
     <nav className="sometimes flexible pagination">
-      <button disabled={props.view.page < 3}>First Page</button>
-      <button disabled={props.view.page < 2}>Previous Page</button>
+      <div className="flexible button-bar">
+        <button disabled={props.view.page < 3} onClick={(event) => {
+          store.dispatch(actions.updateView(Object.assign({}, props.view, {
+            page: 1
+          })));
+        }}>First Page</button>
+        <button disabled={props.view.page < 2} onClick={(event) => {
+          store.dispatch(actions.updateView(Object.assign({}, props.view, {
+            page: Math.max(1, props.view.page - 1)
+          })));
+        }}>Previous Page</button>
+      </div>
 
-      <div>
+      <div className="page-of">
         <label htmlFor="page">Page&ensp;</label>
-        <select name="page" id="page" value={props.view.page} onChange={(event) => {
+        <select disabled={numPages < 2} name="page" id="page" value={props.view.page} onChange={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             page: parseInt(event.target.value)
           })))
@@ -43,22 +53,36 @@ export default function Pagination(props) {
         <span>&ensp;of {numPages}</span>
       </div>
 
-      <button disabled={(numPages - props.view.page) < 1}>Next Page</button>
-      <button disabled={(numPages - props.view.page) < 2}>Last Page</button>
+      <div className="flexible button-bar">
+        <button disabled={(numPages - props.view.page) < 1} onClick={(event) => {
+          store.dispatch(actions.updateView(Object.assign({}, props.view, {
+            page: Math.min(props.view.page + 1, numPages)
+          })));
+        }}>Next Page</button>
+        <button disabled={(numPages - props.view.page) < 2} onClick={(event) => {
+          store.dispatch(actions.updateView(Object.assign({}, props.view, {
+            page: numPages
+          })));
+        }}>Last Page</button>
 
-      <button>Refresh</button>
+        <button>Refresh</button>
+      </div>
 
+      <div className="flexible displaying">
       <div>
         <label htmlFor="per-page">Per Page&ensp;</label>
         <input type="number" id="per-page" name="per-page" value={props.view.perPage} min="10" step="1" onChange={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             perPage: parseInt(event.target.value)
           })))
+        }} style={{
+          'minWidth': `${allLength.toString().length}em`
         }} />
       </div>
 
       <small aria-live="polite" aria-atomic="true">Displaying {start} <span aria-label="through">&ndash;</span> {end} of {allLength}</small>
 
+      </div>
     </nav>
   );
 }

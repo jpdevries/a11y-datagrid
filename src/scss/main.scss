@@ -28,7 +28,7 @@ body {
   //display: grid;
   //grid-template-rows: min-content;
 
-  padding: .5rem;
+  //padding: .5rem;
   margin: 0;
 
   @include grid-media($gt-mobile) {
@@ -113,32 +113,49 @@ td.value {
   }
 }
 
-
+#per-page {
+  min-width: 4em;
+  max-width: 4em;
+}
 
 header {
   margin-bottom: 1rem;
 }
 
 header {
-  display: flex;
-  justify-content: space-around;
+  @include grid-media($gt-mobile) {
+    display: flex;
+    justify-content: space-around;
+  }
   margin-bottom: 1rem;
 
   > * {
     margin-left: auto;
     marign-right: auto;
+    margin-bottom: 1rem;
+    label {
+      display: block;
+      @include grid-media($gt-mobile) {
+        display: inline-block;
+      }
+    }
+    @include grid-media($gt-mobile) {
+      margin-bottom: 0;
+    }
     &:first-child {
       margin-left: 0;
     }
   }
 
   .search {
-    flex-basis: 12em;
-    flex-grow: 1;
-    max-width:18em;
-    padding-left:1rem;
-    padding-right:1rem;
-    display: flex;
+    @include grid-media($gt-mobile) {
+      flex-basis: 12em;
+      flex-grow: 1;
+      max-width:18em;
+      padding-left:1rem;
+      padding-right:1rem;
+      display: flex;
+    }
     > div {
       flex-grow: 1;
       input {
@@ -158,6 +175,7 @@ header {
   }*/
 
   .clear-submit {
+    text-align: center;
     @include grid-media($gt-mobile) {
       text-align: right;
     }
@@ -173,6 +191,10 @@ header {
 table {
   display: grid;
   thead {
+    @media screen and (max-width: 40em) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
     text-align: left;
     tr {
       display: block;
@@ -209,7 +231,10 @@ table {
       display: block;
       &.select {
         grid-area: select;
-        text-align: center;
+        text-align: left;
+        @include grid-media($gt-mobile) {
+          text-align: center;
+        }
       }
       &.name {
         grid-area: name;
@@ -242,6 +267,10 @@ table {
       }
       &:focus, &.focused {
         grid-template-areas: "select" "name" "key" "value" "last-modified" "actions";
+        padding: 0;
+        > td:not(.update-setting) {
+          padding-bottom: .25rem;
+        }
         @include grid-media($gt-mobile) {
           grid-template-areas: "select name name key value last-modified" "actions actions actions actions actions actions";
         }
@@ -265,7 +294,10 @@ table {
     td {
       &.select {
         grid-area: select;
-        text-align: center;
+        text-align: left;
+        @include grid-media($gt-mobile) {
+          text-align: center;
+        }
       }
       &.name {
         grid-area: name;
@@ -310,6 +342,20 @@ table {
   @extend %flexible;
 }
 
+.flexible.sometimes {
+  @include grid-media($gt-mobile) {
+    @include flexible;
+  }
+}
+
+.page-of {
+  @media (max-width: 40em) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
 .flexible.pagination {
   //padding: 1rem 0;
   margin-top: 1rem;
@@ -320,26 +366,90 @@ table {
     order: 3;
   }
 
-  small:last-child {
+  .displaying:last-child {
     align-self: flex-end;
     margin-left: auto;
+  }
+
+  > .button-bar {
+
+  }
+
+  @media screen and (max-width: 40em) {
+    --border-color: rgb(210, 210, 210);
+    --background-color: rgb(220, 220, 220);
+    --border-color-dark: rgb(160, 160, 160);
+    --border-color-highlight: rgb(255, 255, 255);
+
+    //color: rgb(250, 250, 250);
+
+
+
+    background: var(--background-color, rgb(80, 80, 80));
+    padding: 1rem;
+    border-top: 1px solid var(--border-color-dark, rgb(160, 160, 160));
+    border-bottom: 1px solid var(--border-color-highlight, rgb(255, 255, 255));
+  }
+
+  @media screen and (max-width: 40em) and (min-height: 30em) {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    box-shadow: inset 0px 4px 10px -4px rgba(40,40,40,0.275);
+  }
+
+}
+
+.a11y-datagrid {
+  @media (max-width: 40em) {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    > * {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
   }
 }
 
 .button-bar {
-
+  > * {
+    @media (max-width: 40em) {
+      &:not([hidden]) {
+        display: block;
+      }
+      margin:0 auto 1rem auto;
+    }
+  }
 }
 
-
-
-.visually-hidden { /*https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html*/
-    position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    padding:0 !important;
-    border:0 !important;
-    height: 1px !important;
-    width: 1px !important;
-    overflow: hidden;
+@mixin visually-hidden() {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+  body:hover & {
+    a, input, button {
+      display: none !important;
+    }
+  }
 }
-body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .visually-hidden button { display: none !important; }
+
+%visually-hidden {
+  @include visually-hidden;
+}
+
+.visually-hidden:not(.sometimes) { /*https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html*/
+  @include visually-hidden;
+}
+
+.visually-hidden.sometimes {
+  @include grid-media($gt-mobile) {
+    @include visually-hidden;
+  }
+}

@@ -1,5 +1,7 @@
 import * as actions from './actions';
 
+import slug from 'slugg';
+
 const combineReducers = require('redux').combineReducers;
 
 const faker = require('faker');
@@ -112,11 +114,11 @@ function viewReducer(state, action) {
   return state;
 }
 
-
-
 const initialNamespaceSettings = initialSettingsState.filter((setting) => (
   setting.namespace === initialViewReducer.namespace
 ));
+
+
 
 function namespaceSettingsReducer(state, action) {
   state = settings;
@@ -128,32 +130,33 @@ function namespaceSettingsReducer(state, action) {
   switch(action.type) {
     case actions.UPDATE_VIEW:
     console.log('UPDATE_VIEW');
-    console.log(view);
+    //console.log(view);
     if(action.view.namespace) {
       console.log('updating namespace');
       r = r.filter((setting) => (
         setting.namespace === (action.view.namespace)
       ));
-      console.log(r);
+      //console.log(r);
     }
 
     if(action.view.area) {
-      console.log('filtering on area', (action.view.area))
+      console.log('filtering on area', (action.view.area), r)
       r = r.filter((setting) => (
-        setting.area === (action.view.area)
+        slug(setting.area) === slug((action.view.area))
       ));
+      console.log(r);
     }
 
     if(action.view.xtype) {
+      console.log('filtering on xtype', (action.view.xtype));
       r = r.filter((setting) => (
         setting.xtype === (action.view.xtype)
       ));
     }
     break;
 
-
     case actions.DELETE_SETTING:
-    console.log('delete setting', action);
+    //console.log('delete setting', action);
     r = r.filter((setting) => (
       setting.uuid !== action.uuid
     ));

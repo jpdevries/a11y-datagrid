@@ -3,7 +3,15 @@ import React, { Component } from 'react';
 import * as actions from './model/actions';
 import store from './model/store';
 
-export default class Header extends Component {
+import { withRouter } from 'react-router';
+
+import { Link } from 'react-router-dom';
+
+import slug from 'slugg';
+
+import path from 'path';
+
+class Header extends Component {
 
   constructor(props) {
     super(props);
@@ -43,19 +51,38 @@ export default class Header extends Component {
       return t;
     }
 
-    const areas = props.areas.map((area) => ( // .filter((area) => (tallyByArea(area)))
-      <option disabled={!tallyByArea(area)} key={area} value={area}>{area} ({tallyByArea(area)})</option>
-    )),
-    xtypes = props.xtypes.map((xtype) => (
-      <option key={xtype} value={xtype}>{xtype}</option>
-    ));
+    function tallyByXtype(xtype) {
+      let t = 0;
+      props.settings.filter((setting) => (
+        setting.namespace === props.view.namespace
+      )).forEach((setting) => {
+        if(setting.xtype == xtype) t++
+      });
+      return t;
+    }
 
-    const allLength = props.settings.filter((setting) => (setting.namespace == props.view.namespace)).length;
+    const areas = props.areas.map((area) => {
+      const tally = tallyByArea(area);
+      return (
+        <option disabled={!tally} key={area} value={slug(area)}>{area} ({tally})</option>
+      );
+    }),
+    xtypes = props.xtypes.map((xtype) => {
+      const tally = tallyByXtype(xtype);
+      return (
+        <option disabled={!tally} key={xtype} value={slug(xtype)}>{xtype} ({tally})</option>
+      );
+    }),
+    allLength = props.settings.filter((setting) => (setting.namespace == props.view.namespace)).length;
 
     return (
       <header>
-      <div className="flexible">
-        <button>Create New Setting</button>
+      <div className="sometimes flexible button-bar">
+        <button onClick={(event) => {
+          alert('Pretend an accessible modal comes up to Create New Setting in and of the current namespace, area, xtype')
+        }}>Create New Setting</button>
+
+
 
         <button hidden={!(props.view.checkedSettings.length)} disabled={!(props.view.checkedSettings.length)} onClick={(event) => {
           const inputs = document.querySelectorAll('input[name="checked_settings"]');
@@ -72,13 +99,15 @@ export default class Header extends Component {
         }}>Delete{props.view.checkedSettings.length ? ` ${props.view.checkedSettings.length}` : ''} Item{props.view.checkedSettings.length > 1 ? 's' : ''}</button>
 
       </div>
+      <h3 className="sometimes visually-hidden">Filter By</h3>
       <div className="namespace">
         <label htmlFor="namespace"><span className="visually-hidden">Filter by </span>Namespace&ensp;</label>
         <select name="namespace" id="namespace" value={props.view.namespace} onChange={(event) => {
-          store.dispatch(actions.updateView({
+          store.dispatch(actions.updateView(Object.assign({}, props.view, {
             namespace: event.target.value,
             area: props.view.area
-          }));
+          })));
+          this.props.history.push(path.join('/', `${event.target.value}`));
         }}>
           {optgroups}
         </select>
@@ -89,7 +118,8 @@ export default class Header extends Component {
           store.dispatch(actions.updateView({
             area: event.target.value,
             namespace: props.view.namespace
-          }))
+          }));
+          this.props.history.push(path.join('/', props.view.namespace, `${event.target.value}`));
         }}>
           <option value="">All ({allLength})</option>
           {areas}
@@ -102,7 +132,9 @@ export default class Header extends Component {
             xtype: event.target.value,
             namespace: props.view.namespace,
             area: props.view.area
-          }))
+          }));
+          console.log(path.join('/', props.view.namespace || '', props.view.area || '', `${event.target.value}`));
+          this.props.history.push(path.join('/', props.view.namespace || '', props.view.area || '', `${event.target.value}`));
         }}>
           <option value="">All</option>
           {xtypes}
@@ -128,6 +160,7 @@ export default class Header extends Component {
             search: ''
           });
           props.onSearch(event.target.value);
+          this.props.history.push(path.join('/', props.view.namespace || ''));
         }}>Clear Filters</button>
 
       </div>
@@ -135,3 +168,5 @@ export default class Header extends Component {
     );
   }
 }
+
+export default withRouter(Header);
