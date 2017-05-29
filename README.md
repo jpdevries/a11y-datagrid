@@ -2,7 +2,7 @@
 
 WIP.
 
-![](http://j4p.us/1y3V1g272Z3P/Screen%20Shot%202017-05-29%20at%2011.27.36%20AM.png)
+![](http://j4p.us/1d00151e3y1L/Screen%20Shot%202017-05-29%20at%2011.30.31%20AM.png)
 
 ## Demo
 [Try the demo](http://a11y-datagrid.markup.tips/).
@@ -14,6 +14,8 @@ WIP.
  - Accessible Data Grid
     - Keyboard
     - Screen Reader
+      - ARIA
+      - `.visually-hidden` text
     - Mobile
     - Vision
       - Low Vision
