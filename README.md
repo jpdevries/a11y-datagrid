@@ -20,7 +20,11 @@ WIP.
     - Vision
       - Low Vision
       - Contrast
+        - White on Black
       - Reduced Motion
+
+## ♿️ Accessibility Proclaimer
+This project strives for WCAG Level AA success criteria in all scenarios with some accessibility preference features leaning towards Level AAA. Please [log *any* a11y issues&nbsp;here](https://github.com/jpdevries/a11y-datagrid/issues).
 
 ## REST API
 A robust rest API allows the data grid to be browsed by the URL all the way down to targeting specific rows, filter, and pagination settings.
