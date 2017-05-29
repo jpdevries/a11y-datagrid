@@ -209,6 +209,12 @@ table {
       }
       td {
         display: block;
+        &:not(.update-setting) {
+          @media screen and (max-width: 40em) {
+            //padding-left: .5rem;
+            //padding-right: .5rem;
+          }
+        }
       }
     }
   }
@@ -326,6 +332,13 @@ table {
         background: var(--background-color, rgb(200, 200, 200));
         border-top: 1px solid rgb(160, 160, 160);
         border-bottom: 1px solid rgb(255, 255, 255);
+
+        > .button-bar {
+          > * {
+            margin-bottom: 0;
+          }
+        }
+
       }
     }
   }
@@ -391,13 +404,13 @@ table {
     border-bottom: 1px solid var(--border-color-highlight, rgb(255, 255, 255));
   }
 
-  @media screen and (max-width: 40em) and (min-height: 30em) {
+  @media screen and (max-width: 40em) and (min-height: 40em) {
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
 
-    box-shadow: inset 0px 4px 10px -4px rgba(40,40,40,0.275);
+    box-shadow: inset 0px 4px 10px -4px rgba(40,40,40,0.275), 0px 4px 6px -2px rgba(0,0,0,0.17275);
   }
 
 }

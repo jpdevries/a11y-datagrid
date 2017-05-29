@@ -105,7 +105,8 @@ class Header extends Component {
         <select name="namespace" id="namespace" value={props.view.namespace} onChange={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             namespace: event.target.value,
-            area: props.view.area
+            area: props.view.area,
+            page: 1
           })));
           this.props.history.push(path.join('/', `${event.target.value}`));
         }}>
@@ -114,10 +115,11 @@ class Header extends Component {
       </div>
       <div className="area">
         <label htmlFor="area"><span className="visually-hidden">Filter by </span>Area&ensp;</label>
-        <select name="area" id="area" value={props.view.area} onChange={(event) => {
+        <select name="area" id="area" value={props.view.area || ''} onChange={(event) => {
           store.dispatch(actions.updateView({
             area: event.target.value,
-            namespace: props.view.namespace
+            namespace: props.view.namespace,
+            page: 1
           }));
           this.props.history.push(path.join('/', props.view.namespace, `${event.target.value}`));
         }}>
@@ -127,11 +129,12 @@ class Header extends Component {
       </div>
       <div className="xtype">
         <label htmlFor="xtype"><span className="visually-hidden">Filter by </span><span className="small caps">xtype</span>&ensp;</label>
-        <select name="xtype" id="xtype" value={props.view.xtype} onChange={(event) => {
+        <select name="xtype" id="xtype" value={props.view.xtype || ''} onChange={(event) => {
           store.dispatch(actions.updateView({
             xtype: event.target.value,
             namespace: props.view.namespace,
-            area: props.view.area
+            area: props.view.area,
+            page: 1
           }));
           console.log(path.join('/', props.view.namespace || '', props.view.area || '', `${event.target.value}`));
           this.props.history.push(path.join('/', props.view.namespace || '', props.view.area || '', `${event.target.value}`));
@@ -152,9 +155,9 @@ class Header extends Component {
       <div className="clear-submit">
         <button type="reset" onClick={(event) => {
           store.dispatch(actions.updateView({
-            area: '',
+            area: undefined,
             namespace: props.view.namespace,
-            xtype: props.view.xtype
+            xtype: undefined
           }));
           this.setState({
             search: ''
