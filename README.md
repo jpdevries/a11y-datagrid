@@ -5,6 +5,9 @@ WIP.
 ## Demo
 [Try the demo](http://a11y-datagrid.markup.tips/).
 
+## Screencast
+[Watch the 4min screencast](https://vimeo.com/219314498) on Vimeo.
+
 ## Goals
  - Accessible Data Grid
     - Keyboard
