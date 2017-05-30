@@ -6,6 +6,16 @@ export const updateView = function(view) {
   }
 }
 
+export const UPDATE_SETTING = 'udpate_setting';
+export const updateSetting = function(uuid, props, view) {
+  return {
+    type: UPDATE_SETTING,
+    uuid,
+    props,
+    view
+  }
+}
+
 export const DELETE_SETTING = 'delete_setting';
 export const deleteSetting = function(uuid) {
   return {

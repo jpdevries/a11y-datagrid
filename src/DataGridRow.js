@@ -35,7 +35,7 @@ export default class DataGridRow extends Component {
     state = this.state;
 
     return (
-      <tr tabIndex="0" className={classNames({
+      <tr tabIndex="0" contextMenu={`menu__${props.uuid}`} className={classNames({
         'focused': state.focused
       })} onFocus={(event) => {
         if(!event.target.matches('tr')) return;
@@ -63,7 +63,7 @@ export default class DataGridRow extends Component {
           <code>{this.formatValue()}</code>
         </td>
         <td className="last-modified">
-          <code>{new Date(Math.floor(Math.random() * new Date().getTime())).toLocaleDateString()}</code>
+          <code>{new Date(props.lastModified).toLocaleDateString()}</code>
         </td>
         <td className="update-setting">
           <div className="flexible button-bar">

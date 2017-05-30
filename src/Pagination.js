@@ -68,6 +68,39 @@ export default function Pagination(props) {
         <button>Refresh</button>
       </div>
 
+      <div className="sort-dir">
+      <fieldset>
+        <legend className="visually-hidden">Sort Direction</legend>
+        <div class="sometimes flexible">
+        <span aria-hidden>Sort Direction</span>
+        <label htmlFor="sort-dir-asc">
+          <input aria-label="ascending" checked={props.view.sort.dir == "ASC"} type="radio" id="sort-dir-asc" name="sort-dir" value="ASC" onChange={(event) => {
+            store.dispatch(actions.updateView(
+              Object.assign({}, props.view, {
+                sort: Object.assign({}, props.view.sort, {
+                  dir: event.target.value
+                })
+              })
+            ))
+          }} />
+          <small>ASC</small>
+        </label>
+        <label htmlFor="sort-dir-desc">
+          <input aria-label="descending" checked={props.view.sort.dir == "DESC"} type="radio" id="sort-dir-desc" name="sort-dir" value="DESC" onChange={(event) => {
+            store.dispatch(actions.updateView(
+              Object.assign({}, props.view, {
+                sort: Object.assign({}, props.view.sort, {
+                  dir: event.target.value
+                })
+              })
+            ))
+          }} />
+          <small>DESC</small>
+        </label>
+        </div>
+      </fieldset>
+      </div>
+
       <div className="flexible displaying">
       <div>
         <label htmlFor="per-page">Per Page&ensp;</label>

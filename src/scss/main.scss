@@ -1,5 +1,7 @@
 @import "neat/neat";
 
+@import "a11y";
+
 $gt-mobile: (
   columns: 12,
   gutter: 1rem,
@@ -22,6 +24,11 @@ $gt-mobile: (
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  --light-bg: white;
+  background:var(--light-bg, white);
 }
 
 body {
@@ -247,9 +254,17 @@ header {
   }
 }
 
+/*
+button {
+  &[disabled] {
+    color: currentColor;
+  }
+}
+*/
+
 table {
   display: grid;
-  overflow-y: scroll;
+  overflow-y: hidden;
   thead {
     @media screen and (max-width: 40em) {
       padding-top: 1rem;
@@ -348,12 +363,12 @@ table {
       --background-color: rgb(253, 253, 253);
       --border-color: rgb(245, 245, 245);
 
-      background: var(--background, rgb(253, 253, 253));
+      background: var(--light-bg, rgb(253, 253, 253));
 
       border-top: 1px solid var(--border-color, rgb(245, 245, 245));
       border-bottom: 1px solid var(--border-color, rgb(245, 245, 245));
       &:nth-of-type(even) {
-        background: rgb(240, 240, 240);
+        background: var(--light-bg-alternate, rgb(240, 240, 240));
         border-color: rgb(230, 230, 230);
       }
     }
@@ -383,7 +398,7 @@ table {
       }
       &.update-setting {
         --border-color: rgb(210, 210, 210);
-        --background-color: rgb(180, 180, 180);
+        --background-color: var(--recessed-bg, rgb(180, 180, 180));
 
         padding: .5rem 0;
 
@@ -494,6 +509,27 @@ table {
         display: block;
       }
       margin:0 auto 1rem auto;
+    }
+  }
+}
+
+.sort-dir {
+  @include grid-media($gt-mobile) {
+    flex-grow: 1;
+    text-align: center;
+    fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+      > div {
+        display: flex;
+        justify-content: center;
+        > * {
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
     }
   }
 }

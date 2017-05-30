@@ -10,6 +10,8 @@ import DataGrid from './DataGrid';
 import ModalCreateSetting from './ModalCreateSetting';
 import Pagination from './Pagination';
 
+import Mousetrap from 'mousetrap';
+
 export default class SettingsGrid extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +22,41 @@ export default class SettingsGrid extends Component {
 
   componentWillMount() {
     store.dispatch(actions.updateView(this.props.view)); // kinda #janky
+
+    this.assignKeyboardListeners();
+  }
+
+  assignKeyboardListeners() {
+    Mousetrap.bind(['alt+up'], this.handleKeyboardSortAscending);
+    Mousetrap.bind(['alt+down'], this.handleKeyboardSortDescending);
+  }
+
+  handleKeyboardSortAscending = (event) => {
+    const props = this.props;
+
+    store.dispatch(actions.updateView(
+      Object.assign({}, props.view, {
+        sort: Object.assign({}, props.view.sort, {
+          dir: 'ASC'
+        })
+      })
+    ))
+  }
+
+  handleKeyboardSortDescending = (event) => {
+    const props = this.props;
+
+    store.dispatch(actions.updateView(
+      Object.assign({}, props.view, {
+        sort: Object.assign({}, props.view.sort, {
+          dir: 'DESC'
+        })
+      })
+    ))
+  }
+
+  componentWillUnmount() {
+    this.removeKeyboardListeners();
   }
 
   handleSearch = (search) => {
@@ -32,6 +69,40 @@ export default class SettingsGrid extends Component {
   render() {
     const props = this.props;
     console.log(props);
+
+    const {filteredSettings} = props;
+    const perPage = !isNaN(props.view.perPage) ? props.view.perPage : 10;
+
+    let rows = filteredSettings.slice((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
+
+    function getAreas(setting) {
+      const areas = props.areas.filter((area) => (
+        area !== props.view.area
+      )).map((area) => (
+        <menuitem label={`${area}`} onClick={(event) => {
+          console.log('updating ', setting.uuid, area);
+          store.dispatch(actions.updateSetting(setting.uuid, {
+            area: area
+          }, props.view))
+        }}></menuitem>
+      ));
+
+      return areas;
+    }
+
+    const menus = rows.map((setting) => (
+      <menu type="context" id={`menu__${setting.uuid}`}>
+        <menuitem label={`Update ${setting.name}`} onClick={(event) => {
+          alert(`Pretend an accessible modal just opened up! Editing ${setting.name}`);
+        }}></menuitem>
+        <menuitem label={`Delete ${setting.name}`} onClick={(event) => {
+          store.dispatch(actions.deleteSetting(setting.uuid));
+        }}></menuitem>
+        <menu type="context" label="Move to another area" id={`menu__${setting.uuid}__area`}>
+          {getAreas(setting)}
+        </menu>
+      </menu>
+    ))
 
     return (
       <BrowserRouter>
@@ -53,6 +124,10 @@ export default class SettingsGrid extends Component {
         <Route exact path='/' render={(routeProps) => (
           <DataGrid key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
         )}/>
+
+        <div hidden>
+          {menus}
+        </div>
 
       </div>
       </BrowserRouter>

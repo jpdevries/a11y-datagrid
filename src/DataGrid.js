@@ -84,20 +84,27 @@ export default class DataGrid extends Component {
 
     let rows = filteredSettings.map((setting, index) => (
       <DataGridRow key={`${setting.key}`} {...setting} checkSetting={this.checkSetting} />
-    ));
-
-    console.log((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
-    rows = rows.slice((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
+    )).slice((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
 
     return (
       <table>
-        <thead>
+        <thead onChange={(event) => {
+          if(event.target.getAttribute('name') == 'sort-by') {
+            store.dispatch(actions.updateView(
+              Object.assign({}, props.view, {
+                sort: Object.assign({}, props.view.sort, {
+                  by: event.target.value
+                })
+              })
+            ));
+          }
+        }}>
           <tr>
-            <th className="select">
+            <th className="select" aria-label="Select All">
             <label htmlFor="check_all">
 
               <input type="checkbox" name="check_all" id="check_all" onChange={(event) => {
-                const inputs = document.querySelectorAll('input[name="checked_settings"]'),
+                const inputs = event.target.closest('data-reactroot').querySelectorAll('input[name="checked_settings"]'),
                 checkedSettings = (event.target.checked) ? filteredSettings : [];
 
                 for(let i = 0; i < inputs.length; i++) {
@@ -110,17 +117,40 @@ export default class DataGrid extends Component {
 
                 store.dispatch(actions.updateView({
                   checkedSettings
-
                 }));
 
-              }} /> 
+              }} />
               <span className="sometimes visually-hidden" id="select-cell">Select All</span>
             </label>
             </th>
-            <th className="name">Name</th>
-            <th className="key">Key</th>
-            <th className="value">Value</th>
-            <th className="last-modified">Last Modified</th>
+            <th className="name" aria-label="Sort">
+              <label htmlFor="sort-by-name">
+                <input checked={props.view.sort.by === 'name'} type="radio" id="sort-by-name" name="sort-by" value="name" />
+                <span className="visually-hidden">Sort by </span>
+                Name
+              </label>
+            </th>
+            <th className="key" aria-label="Key">
+              <label htmlFor="sort-by-key">
+                <input checked={props.view.sort.by === 'key'} type="radio" id="sort-by-key" name="sort-by" value="key" />
+                <span className="visually-hidden">Sort by </span>
+                Key
+              </label>
+            </th>
+            <th className="value" aria-label="Value">
+              <label htmlFor="sort-by-value">
+                <input checked={props.view.sort.by === 'value'} type="radio" id="sort-by-value" name="sort-by"  value="value" />
+                <span className="visually-hidden">Sort by </span>
+                Value
+              </label>
+            </th>
+            <th className="last-modified" aria-label="Last Modified">
+              <label htmlFor="sort-by-modified">
+                <input checked={props.view.sort.by === 'lastModified'} type="radio" id="sort-by-modified" name="sort-by"  value="lastModified" />
+                <span className="visually-hidden">Sort by </span>
+                Last Modified
+              </label>
+            </th>
             <th className="visually-hidden update-setting">Update Setting</th>
           </tr>
         </thead>

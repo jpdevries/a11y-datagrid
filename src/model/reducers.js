@@ -35,7 +35,9 @@ const initialSettingsState = (() => {
   let settings = require('./dummy.json').map((setting) => (
     Object.assign({
       name: setting.key,
-      uuid: setting.key
+      uuid: setting.key,
+      key: setting.key.trim(),
+      lastModified: new Date(Math.floor(Math.random() * new Date().getTime())).getTime()
     }, setting)
   ));
 
@@ -70,6 +72,16 @@ function settingsReducer(state, action) {
     ));
     break;
 
+    case actions.UPDATE_SETTING:
+    return state.map((setting) => {
+      if(setting.uuid === action.uuid) {
+        return Object.assign({}, setting, action.props);
+      }
+
+      return setting;
+    })
+    break;
+
     case actions.DELETE_SETTINGS:
     return state.filter((setting) => (
       !(action.uuids.indexOf(setting.uuid) > -1)
@@ -86,6 +98,10 @@ const initialViewReducer = {
   area: undefined,
   perPage: 42,
   page: 1,
+  sort: {
+    by: 'name',
+    dir: 'ASC'
+  },
   checkedSettings: []
 };
 
@@ -121,14 +137,24 @@ const initialNamespaceSettings = initialSettingsState.filter((setting) => (
 
 
 function namespaceSettingsReducer(state, action) {
-  state = settings;
-
-  let r = state;
+  let r = state || initialNamespaceSettings;
   console.log(action);
   console.log(view);
 
   switch(action.type) {
+    case actions.UPDATE_SETTING:
+    console.log(`uuid: ${action.uuid}`);
+    r = r.map((setting) => {
+      if(setting.uuid === action.uuid) {
+        console.log('MATCH', setting.uuid, action.uuid)
+        return Object.assign({}, setting, action.props);
+      }
+
+      return setting;
+    });
+
     case actions.UPDATE_VIEW:
+    r = settings;
     console.log('UPDATE_VIEW');
     //console.log(view);
     if(action.view.namespace) {
@@ -139,7 +165,7 @@ function namespaceSettingsReducer(state, action) {
       //console.log(r);
     }
 
-    if(action.view.area) {
+    if(action.view.area && action.view.area !== 'all') {
       console.log('filtering on area', (action.view.area), r)
       r = r.filter((setting) => (
         slug(setting.area) === slug((action.view.area))
@@ -153,10 +179,28 @@ function namespaceSettingsReducer(state, action) {
         setting.xtype === (action.view.xtype)
       ));
     }
+
+    if(action.view.sort && action.view.sort.by) {
+      const dir = action.view.sort.dir == 'ASC' ? 1 : -1;
+      console.log(`sorting by ${action.view.sort.by}`);
+      //console.log('before sort', r);
+      r = r.sort((a, b) => {
+        if(a[action.view.sort.by] > b[action.view.sort.by]) {
+          return 1 * dir;
+        }
+
+        if(a[action.view.sort.by] < b[action.view.sort.by]) {
+          return -1 * dir;
+        }
+
+        return 0;
+      });
+      //console.log('after sort', r);
+    }
     break;
 
     case actions.DELETE_SETTING:
-    //console.log('delete setting', action);
+    console.log('delete setting', action);
     r = r.filter((setting) => (
       setting.uuid !== action.uuid
     ));
@@ -169,7 +213,12 @@ function namespaceSettingsReducer(state, action) {
     });
     break;
 
+
+
+
   }
+
+
 
   return r;
 }

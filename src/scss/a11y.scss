@@ -1,0 +1,62 @@
+@mixin black-on-white() {
+  --panel-border-color:rgb(8,8,8);
+  --light-bg:white;
+  --light-bg-alternate: rgb(240, 240, 240);
+  --border-width:2px;
+  --button-color:rgb(20,20,20);
+  --subtle:rgb(20,20,20);
+  --border-style:solid;
+  --border-color:rgb(8,8,8);
+  --very-subtle:rgb(40,40,40);
+  --very-subtle-icon-opacity:1;
+}
+
+@mixin white-on-black() {
+  background:var(--light-bg, rgb(8,8,8));
+  color:var(--color, white);
+  --panel-border-color:white;
+  --light-bg:rgb(8,8,8);
+  --light-bg-alternate: rgb(32, 32, 32);
+  --border-width:2px;
+  --button-bg:transparent;
+  --button-color:rgb(220,220,220);
+  --subtle:rgb(220,220,220);
+  --border-style:solid;
+  --border-color:white;
+  --very-subtle:rgb(120,120,120);
+  --active:yellow;
+  --dangerous:red;
+  --link-color:yellow;
+  --very-subtle-icon-opacity:1;
+
+  --recessed-bg: rgb(60, 60, 60);
+}
+
+[data-grid] {
+  body[data-contrast="black-on-white"] & {
+    @include black-on-white;
+  }
+
+  body[data-contrast="white-on-black"] & {
+    @include white-on-black;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  [data-grid] {
+    /* black on white */
+    @include black-on-white;
+  }
+}
+@media screen and (-ms-high-contrast: black-on-white) {
+  [data-grid] {
+    /* black on white */
+    @include black-on-white;
+  }
+}
+@media screen and (-ms-high-contrast: white-on-black) {
+  [data-grid] {
+    /* white on black */
+    @include white-on-black;
+  }
+}

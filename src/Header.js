@@ -77,6 +77,7 @@ class Header extends Component {
 
     return (
       <header>
+      <p hidden id="sort-by">Sort by</p>
       <div className="sometimes flexible button-bar">
         <button onClick={(event) => {
           alert('Pretend an accessible modal comes up to Create New Setting in and of the current namespace, area, xtype')
@@ -123,7 +124,7 @@ class Header extends Component {
           }));
           this.props.history.push(path.join('/', props.view.namespace, `${event.target.value}`));
         }}>
-          <option value="">All ({allLength})</option>
+          <option value="all">All ({allLength})</option>
           {areas}
         </select>
       </div>
@@ -136,8 +137,8 @@ class Header extends Component {
             area: props.view.area,
             page: 1
           }));
-          console.log(path.join('/', props.view.namespace || '', props.view.area || '', `${event.target.value}`));
-          this.props.history.push(path.join('/', props.view.namespace || '', props.view.area || '', `${event.target.value}`));
+          console.log(path.join('/', props.view.namespace || '', props.view.area || 'all', `${event.target.value}`));
+          this.props.history.push(path.join('/', props.view.namespace || '', props.view.area || 'all', `${event.target.value}`));
         }}>
           <option value="">All</option>
           {xtypes}

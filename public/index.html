@@ -12,6 +12,17 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <style type="text/css">
+    @media screen and (-ms-high-contrast: white-on-black) {
+      body {
+        background: rgb(8, 8, 8);
+      }
+    }
+    body[data-contrast="white-on-black" i] {
+      background: rgb(8, 8, 8);
+    }
+    </style>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,7 +38,7 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="root" data-grid></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
