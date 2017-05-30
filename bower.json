@@ -1,0 +1,22 @@
+{
+  "name": "a11y-datagrid",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jpdevries/a11y-datagrid",
+  "authors": [
+    "JP DeVries <mail@devries.jp>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.3.4",
+    "neat": "~2.0.0",
+    "html5-boilerplate": "~5.3.0",
+    "spectacular": "~0.0.0"
+  }
+}
