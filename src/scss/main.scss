@@ -534,6 +534,99 @@ table {
   }
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(8, 8, 8, 0.2);
+  z-index: 0;
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dialog {
+  z-index: 1;
+  left: 1.5rem;
+  right: 1.5rem;
+  
+  top: 1.5rem;
+  bottom: 1.5rem;
+  width: auto;
+  height: auto;
+  //min-height: ;
+  
+  border: 1px solid rgb(120, 120, 120);
+  border-radius: .35rem;
+  
+  display: grid;
+  grid-template-rows: min-content auto;
+  h1 {
+    text-align: center;
+    font-size: 1rem;
+    transform: translateY(-.5rem);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .field {
+    label {
+      display: block;
+    }
+    summary {
+      label {
+        display: inline-block;
+      }
+    }
+    input, textarea {
+      width: 100%;
+    }
+    p {
+      margin-top: .5rem;
+    }
+  }
+}
+
+form.new-setting {
+  display: grid;
+  grid-template-areas: "key xtype" "name namespace" "description lexicon" "value value" "footer footer";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content min-content auto min-content;
+  grid-gap: 1rem;
+  footer {
+    justify-content: center;
+    grid-area: footer;
+  }
+  .new-key {
+    grid-area: key;
+  }
+  .new-xtype {
+    grid-area: xtype;
+  }
+  .new-name {
+    grid-area: name;
+  }
+  .new-namespace {
+    grid-area: namespace;
+  }
+  .new-description {
+    grid-area: description;
+  }
+  .new-lexicon {
+    grid-area: lexicon;
+  }
+  .new-value {
+    grid-area: value;
+    
+    display: grid;
+    grid-template-rows: min-content auto;
+  }
+}
+
 @mixin visually-hidden() {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */

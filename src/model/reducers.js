@@ -98,6 +98,7 @@ const initialViewReducer = {
   area: undefined,
   perPage: 42,
   page: 1,
+  tableId: "settings-datagrid",
   sort: {
     by: 'name',
     dir: 'ASC'

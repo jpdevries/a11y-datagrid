@@ -23,7 +23,6 @@ class Header extends Component {
 
   render() {
     const props = this.props;
-
     const namespaces = props.namespaces;
 
     const optgroups = Object.keys(namespaces).map((key) => {
@@ -76,11 +75,12 @@ class Header extends Component {
     allLength = props.settings.filter((setting) => (setting.namespace == props.view.namespace)).length;
 
     return (
-      <header>
+      <header aria-hidden={props['aria-hidden']}>
       <p hidden id="sort-by">Sort by</p>
       <div className="sometimes flexible button-bar">
         <button onClick={(event) => {
-          alert('Pretend an accessible modal comes up to Create New Setting in and of the current namespace, area, xtype')
+          //alert('Pretend an accessible modal comes up to Create New Setting in and of the current namespace, area, xtype')
+          this.props.handleCreateNew();
         }}>Create New Setting</button>
 
 
@@ -103,7 +103,7 @@ class Header extends Component {
       <h3 className="sometimes visually-hidden">Filter By</h3>
       <div className="namespace">
         <label htmlFor="namespace"><span className="visually-hidden">Filter by </span>Namespace&ensp;</label>
-        <select name="namespace" id="namespace" value={props.view.namespace} onChange={(event) => {
+        <select name="namespace" id="namespace" value={props.view.namespace} aria-controls={props.view.tableId} onChange={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             namespace: event.target.value,
             area: props.view.area,
@@ -116,7 +116,7 @@ class Header extends Component {
       </div>
       <div className="area">
         <label htmlFor="area"><span className="visually-hidden">Filter by </span>Area&ensp;</label>
-        <select name="area" id="area" value={props.view.area || ''} onChange={(event) => {
+        <select name="area" id="area" value={props.view.area || ''} aria-controls={props.view.tableId} onChange={(event) => {
           store.dispatch(actions.updateView({
             area: event.target.value,
             namespace: props.view.namespace,
@@ -130,7 +130,7 @@ class Header extends Component {
       </div>
       <div className="xtype">
         <label htmlFor="xtype"><span className="visually-hidden">Filter by </span><span className="small caps">xtype</span>&ensp;</label>
-        <select name="xtype" id="xtype" value={props.view.xtype || ''} onChange={(event) => {
+        <select name="xtype" id="xtype" value={props.view.xtype || ''} aria-controls={props.view.tableId} onChange={(event) => {
           store.dispatch(actions.updateView({
             xtype: event.target.value,
             namespace: props.view.namespace,
@@ -146,7 +146,7 @@ class Header extends Component {
       </div>
       <div className="search">
         <label htmlFor="search">Search&ensp;</label>
-        <div><input type="text" name="search" id="search" placeholder="access_category_enabled" value={this.state.search} onChange={(event) => {
+        <div><input type="text" name="search" id="search" placeholder="access_category_enabled" aria-controls={props.view.tableId} value={this.state.search} onChange={(event) => {
           this.setState({
             search: event.target.value
           });

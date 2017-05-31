@@ -12,11 +12,18 @@ import Pagination from './Pagination';
 
 import Mousetrap from 'mousetrap';
 
+import slug from 'slugg';
+
+import ModalCreateNew from './ModalCreateNew';
+
+const CREATE_NEW = 'create_new';
+
 export default class SettingsGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: undefined
+      search: undefined,
+      dialog: undefined
     }
   }
 
@@ -29,6 +36,21 @@ export default class SettingsGrid extends Component {
   assignKeyboardListeners() {
     Mousetrap.bind(['alt+up'], this.handleKeyboardSortAscending);
     Mousetrap.bind(['alt+down'], this.handleKeyboardSortDescending);
+    Mousetrap.bind(['esc'], this.handleKeyboardEscape);
+    Mousetrap.bind(['ctrl+n'], this.handleCreateNew);
+  }
+  
+  removeKeyboardListeners() {
+    Mousetrap.unbind(['alt+up'], this.handleKeyboardSortAscending);
+    Mousetrap.unbind(['alt+down'], this.handleKeyboardSortDescending);
+    Mousetrap.unbind(['esc'], this.handleKeyboardEscape);
+    Mousetrap.unbind(['ctrl+n'], this.handleCreateNew);
+  }
+  
+  handleKeyboardEscape = (event) => {
+    this.setState({
+      dialog: undefined
+    })
   }
 
   handleKeyboardSortAscending = (event) => {
@@ -64,6 +86,60 @@ export default class SettingsGrid extends Component {
     this.setState({
       search: search || undefined
     })
+  }
+  
+  handleCreateNew = () => {
+    this.setState({
+      dialog: CREATE_NEW
+    })
+  }
+  
+  getModal() {
+    const props = this.props;
+    const namespaces = props.namespaces;
+    
+    const optgroups = Object.keys(namespaces).map((key) => {
+
+      const options = namespaces[key].map((namespace) => (
+        <option key={namespace}>{namespace}</option>
+      ));
+
+
+      return (
+        <optgroup key={key} label={key}>
+         {options}
+        </optgroup>
+      );
+    });
+    
+    const xtypes = props.xtypes.map((xtype) => {
+      return (
+        <option key={`new-${xtype}`} value={slug(xtype)}>{xtype}</option>
+      );
+    });
+    
+    const handleClose = (event) => {
+      if(event.target.matches('.modal')) {
+        this.setState({
+          dialog: undefined
+        })
+      }
+    };
+    
+    
+    if(this.state.dialog === CREATE_NEW) {
+      return (
+        <div className="modal" onClick={handleClose}>
+          <ModalCreateNew handleClose={(event) => {
+              this.setState({
+                dialog: undefined
+              })
+            }} {...props} />
+        </div>
+      );
+    }
+    
+    return undefined;
   }
 
   render() {
@@ -108,27 +184,27 @@ export default class SettingsGrid extends Component {
       <BrowserRouter>
       <div className="a11y-datagrid">
 
-        <Header {...props} onSearch={this.handleSearch} />
-        <Pagination {...props} />
+        <Header aria-hidden={this.state.dialog !== undefined} {...props} handleCreateNew={this.handleCreateNew} onSearch={this.handleSearch} />
+        <Pagination aria-hidden={this.state.dialog !== undefined} {...props} />
 
 
         <Route exact path='/:namespace/:area/:xtype' render={(routeProps) => (
-          <DataGrid key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
+          <DataGrid aria-hidden={this.state.dialog !== undefined} key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
         )}/>
         <Route exact path='/:namespace/:area' render={(routeProps) => (
-          <DataGrid key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
+          <DataGrid aria-hidden={this.state.dialog !== undefined} key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
         )}/>
         <Route exact path='/:namespace' render={(routeProps) => (
-          <DataGrid key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
+          <DataGrid aria-hidden={this.state.dialog !== undefined} key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
         )}/>
         <Route exact path='/' render={(routeProps) => (
-          <DataGrid key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
+          <DataGrid aria-hidden={this.state.dialog !== undefined} key={`${routeProps.match.url}-${props.view.page}-${props.view.perPage}`} {...props} {...routeProps} search={this.state.search} />
         )}/>
 
-        <div hidden>
+        <div hidden aria-hidden={this.state.dialog !== undefined}>
           {menus}
         </div>
-
+        {this.getModal()}
       </div>
       </BrowserRouter>
     );

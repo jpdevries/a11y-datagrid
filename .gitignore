@@ -7,6 +7,8 @@
 src/scss/bourbon
 src/scss/neat
 
+/lib
+
 # testing
 /coverage
 

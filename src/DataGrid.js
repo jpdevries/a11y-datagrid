@@ -85,9 +85,16 @@ export default class DataGrid extends Component {
     let rows = filteredSettings.map((setting, index) => (
       <DataGridRow key={`${setting.key}`} {...setting} checkSetting={this.checkSetting} />
     )).slice((props.view.page - 1) * perPage, ((props.view.page - 1) * perPage) + perPage);
+    
+    function getSortByColumn(col) {
+      if(props.view.sort.by == col) {
+        return (props.view.sort.dir == "ASC") ? 'ascending' : 'descending';
+      }
+      return 'none';
+    }
 
     return (
-      <table>
+      <table id="settings-datagrid" aria-hidden={props['aria-hidden']}>
         <thead onChange={(event) => {
           if(event.target.getAttribute('name') == 'sort-by') {
             store.dispatch(actions.updateView(
@@ -100,7 +107,7 @@ export default class DataGrid extends Component {
           }
         }}>
           <tr>
-            <th className="select" aria-label="Select All">
+            <th className="select" aria-label="Select all items below" aria-controls={props.view.tableId}>
             <label htmlFor="check_all">
 
               <input type="checkbox" name="check_all" id="check_all" onChange={(event) => {
@@ -123,28 +130,28 @@ export default class DataGrid extends Component {
               <span className="sometimes visually-hidden" id="select-cell">Select All</span>
             </label>
             </th>
-            <th className="name" aria-label="Sort">
+            <th className="name" aria-label="Sort" aria-sort={getSortByColumn("name")} aria-controls={props.view.tableId}>
               <label htmlFor="sort-by-name">
                 <input checked={props.view.sort.by === 'name'} type="radio" id="sort-by-name" name="sort-by" value="name" />
                 <span className="visually-hidden">Sort by </span>
                 Name
               </label>
             </th>
-            <th className="key" aria-label="Key">
+            <th className="key" aria-label="Key" aria-sort={getSortByColumn("key")} aria-controls={props.view.tableId}>
               <label htmlFor="sort-by-key">
                 <input checked={props.view.sort.by === 'key'} type="radio" id="sort-by-key" name="sort-by" value="key" />
                 <span className="visually-hidden">Sort by </span>
                 Key
               </label>
             </th>
-            <th className="value" aria-label="Value">
+            <th className="value" aria-label="Value" aria-sort={getSortByColumn("value")} aria-controls={props.view.tableId}>
               <label htmlFor="sort-by-value">
                 <input checked={props.view.sort.by === 'value'} type="radio" id="sort-by-value" name="sort-by"  value="value" />
                 <span className="visually-hidden">Sort by </span>
                 Value
               </label>
             </th>
-            <th className="last-modified" aria-label="Last Modified">
+            <th className="last-modified" aria-label="Last Modified" aria-sort={getSortByColumn("lastModified")} aria-controls={props.view.tableId}>
               <label htmlFor="sort-by-modified">
                 <input checked={props.view.sort.by === 'lastModified'} type="radio" id="sort-by-modified" name="sort-by"  value="lastModified" />
                 <span className="visually-hidden">Sort by </span>
@@ -154,7 +161,7 @@ export default class DataGrid extends Component {
             <th className="visually-hidden update-setting">Update Setting</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody aria-relevant="all" aria-live="polite">
           {rows}
         </tbody>
       </table>

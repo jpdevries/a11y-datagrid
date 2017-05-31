@@ -27,14 +27,14 @@ export default function Pagination(props) {
   end = Math.min(allLength, ((props.view.page - 1) * perPage) + perPage);
 
   return (
-    <nav className="sometimes flexible pagination">
+    <nav aria-hidden={props['aria-hidden']} className="sometimes flexible pagination">
       <div className="flexible button-bar">
-        <button disabled={props.view.page < 3} onClick={(event) => {
+        <button disabled={props.view.page < 3} aria-controls={props.view.tableId} onClick={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             page: 1
           })));
         }}>First Page</button>
-        <button disabled={props.view.page < 2} onClick={(event) => {
+        <button disabled={props.view.page < 2} aria-controls={props.view.tableId} onClick={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             page: Math.max(1, props.view.page - 1)
           })));
@@ -43,7 +43,7 @@ export default function Pagination(props) {
 
       <div className="page-of">
         <label htmlFor="page">Page&ensp;</label>
-        <select disabled={numPages < 2} name="page" id="page" value={props.view.page} onChange={(event) => {
+        <select disabled={numPages < 2} name="page" id="page" value={props.view.page} aria-controls={props.view.tableId} onChange={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             page: parseInt(event.target.value)
           })))
@@ -54,18 +54,18 @@ export default function Pagination(props) {
       </div>
 
       <div className="flexible button-bar">
-        <button disabled={(numPages - props.view.page) < 1} onClick={(event) => {
+        <button disabled={(numPages - props.view.page) < 1} aria-controls={props.view.tableId} onClick={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             page: Math.min(props.view.page + 1, numPages)
           })));
         }}>Next Page</button>
-        <button disabled={(numPages - props.view.page) < 2} onClick={(event) => {
+        <button disabled={(numPages - props.view.page) < 2} aria-controls={props.view.tableId} onClick={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             page: numPages
           })));
         }}>Last Page</button>
 
-        <button>Refresh</button>
+        <button aria-controls={props.view.tableId}>Refresh</button>
       </div>
 
       <div className="sort-dir">
@@ -74,7 +74,7 @@ export default function Pagination(props) {
         <div class="sometimes flexible">
         <span aria-hidden>Sort Direction</span>
         <label htmlFor="sort-dir-asc">
-          <input aria-label="ascending" checked={props.view.sort.dir == "ASC"} type="radio" id="sort-dir-asc" name="sort-dir" value="ASC" onChange={(event) => {
+          <input aria-label="ascending" aria-controls={props.view.tableId} checked={props.view.sort.dir == "ASC"} type="radio" id="sort-dir-asc" name="sort-dir" value="ASC" onChange={(event) => {
             store.dispatch(actions.updateView(
               Object.assign({}, props.view, {
                 sort: Object.assign({}, props.view.sort, {
@@ -86,7 +86,7 @@ export default function Pagination(props) {
           <small>ASC</small>
         </label>
         <label htmlFor="sort-dir-desc">
-          <input aria-label="descending" checked={props.view.sort.dir == "DESC"} type="radio" id="sort-dir-desc" name="sort-dir" value="DESC" onChange={(event) => {
+          <input aria-label="descending" aria-controls={props.view.tableId} checked={props.view.sort.dir == "DESC"} type="radio" id="sort-dir-desc" name="sort-dir" value="DESC" onChange={(event) => {
             store.dispatch(actions.updateView(
               Object.assign({}, props.view, {
                 sort: Object.assign({}, props.view.sort, {
@@ -104,7 +104,7 @@ export default function Pagination(props) {
       <div className="flexible displaying">
       <div>
         <label htmlFor="per-page">Per Page&ensp;</label>
-        <input type="number" id="per-page" name="per-page" value={props.view.perPage} min="10" step="1" onChange={(event) => {
+        <input type="number" id="per-page" name="per-page" value={props.view.perPage} min="10" step="1" aria-controls={props.view.tableId} onChange={(event) => {
           store.dispatch(actions.updateView(Object.assign({}, props.view, {
             perPage: parseInt(event.target.value)
           })))
@@ -113,7 +113,7 @@ export default function Pagination(props) {
         }} />
       </div>
 
-      <small aria-live="polite" aria-atomic="true">Displaying {start} <span aria-label="through">&ndash;</span> {end} of {allLength}</small>
+      <small aria-live="polite" aria-relevant="all" aria-atomic="true">Displaying {start} <span aria-label="through">&ndash;</span> {end} of {allLength}</small>
 
       </div>
     </nav>

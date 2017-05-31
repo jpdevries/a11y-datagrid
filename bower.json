@@ -18,5 +18,16 @@
     "neat": "~2.0.0",
     "html5-boilerplate": "~5.3.0",
     "spectacular": "~0.0.0"
+  },
+  "exportsOverride": {
+    "bourbon": {
+      "": "app/assets/stylesheets/"
+    },
+    "neat": {
+      "": "core/"
+    },
+    "spectacular": {
+      "": "app/assets/stylesheets/"
+    }
   }
 }
