@@ -7,7 +7,6 @@ import { HashRouter, Switch, Route, Link, BrowserRouter, withRouter } from 'reac
 
 import Header from './Header';
 import DataGrid from './DataGrid';
-import ModalCreateSetting from './ModalCreateSetting';
 import Pagination from './Pagination';
 
 import Mousetrap from 'mousetrap';
@@ -15,6 +14,8 @@ import Mousetrap from 'mousetrap';
 import slug from 'slugg';
 
 import ModalCreateNew from './ModalCreateNew';
+
+
 
 const CREATE_NEW = 'create_new';
 
@@ -39,14 +40,14 @@ export default class SettingsGrid extends Component {
     Mousetrap.bind(['esc'], this.handleKeyboardEscape);
     Mousetrap.bind(['ctrl+n'], this.handleCreateNew);
   }
-  
+
   removeKeyboardListeners() {
     Mousetrap.unbind(['alt+up'], this.handleKeyboardSortAscending);
     Mousetrap.unbind(['alt+down'], this.handleKeyboardSortDescending);
     Mousetrap.unbind(['esc'], this.handleKeyboardEscape);
     Mousetrap.unbind(['ctrl+n'], this.handleCreateNew);
   }
-  
+
   handleKeyboardEscape = (event) => {
     this.setState({
       dialog: undefined
@@ -87,17 +88,17 @@ export default class SettingsGrid extends Component {
       search: search || undefined
     })
   }
-  
+
   handleCreateNew = () => {
     this.setState({
       dialog: CREATE_NEW
     })
   }
-  
+
   getModal() {
     const props = this.props;
     const namespaces = props.namespaces;
-    
+
     const optgroups = Object.keys(namespaces).map((key) => {
 
       const options = namespaces[key].map((namespace) => (
@@ -111,13 +112,13 @@ export default class SettingsGrid extends Component {
         </optgroup>
       );
     });
-    
+
     const xtypes = props.xtypes.map((xtype) => {
       return (
         <option key={`new-${xtype}`} value={slug(xtype)}>{xtype}</option>
       );
     });
-    
+
     const handleClose = (event) => {
       if(event.target.matches('.modal')) {
         this.setState({
@@ -125,8 +126,8 @@ export default class SettingsGrid extends Component {
         })
       }
     };
-    
-    
+
+
     if(this.state.dialog === CREATE_NEW) {
       return (
         <div className="modal" onClick={handleClose}>
@@ -138,7 +139,7 @@ export default class SettingsGrid extends Component {
         </div>
       );
     }
-    
+
     return undefined;
   }
 
@@ -155,7 +156,7 @@ export default class SettingsGrid extends Component {
       const areas = props.areas.filter((area) => (
         area !== props.view.area
       )).map((area) => (
-        <menuitem label={`${area}`} onClick={(event) => {
+        <menuitem key={`${area}`} label={`${area}`} onClick={(event) => {
           console.log('updating ', setting.uuid, area);
           store.dispatch(actions.updateSetting(setting.uuid, {
             area: area
@@ -167,7 +168,7 @@ export default class SettingsGrid extends Component {
     }
 
     const menus = rows.map((setting) => (
-      <menu type="context" id={`menu__${setting.uuid}`}>
+      <menu type="context" key={`key__${setting.uuid}`} id={`menu__${setting.uuid}`}>
         <menuitem label={`Update ${setting.name}`} onClick={(event) => {
           alert(`Pretend an accessible modal just opened up! Editing ${setting.name}`);
         }}></menuitem>

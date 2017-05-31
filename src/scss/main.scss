@@ -521,7 +521,7 @@ table {
       border: none;
       margin: 0;
       padding: 0;
-      > div {
+      > div.sometimes.flexible {
         display: flex;
         justify-content: center;
         > * {
@@ -534,6 +534,14 @@ table {
   }
 }
 
+label[for="enter_fullscreen"] {
+  font-size: .875em;
+  margin: 0;
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+}
+
 .modal {
   position: absolute;
   top: 0;
@@ -542,30 +550,61 @@ table {
   bottom: 0;
   background: rgba(8, 8, 8, 0.2);
   z-index: 0;
-  
-  
+
+  width: 100vw;
+  height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin dialog-fullscreen() {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 0;
+  border: none;
 }
 
 dialog {
   z-index: 1;
   left: 1.5rem;
   right: 1.5rem;
-  
+
   top: 1.5rem;
   bottom: 1.5rem;
   width: auto;
   height: auto;
   //min-height: ;
-  
+
+  &:-webkit-full-screen {
+    @include dialog-fullscreen;
+  }
+  &:-moz-full-screen {
+    @include dialog-fullscreen;
+  }
+  &:-ms-fullscreen {
+    @include dialog-fullscreen;
+  }
+  &:fullscreen {
+    @include dialog-fullscreen;
+  }
+
   border: 1px solid rgb(120, 120, 120);
   border-radius: .35rem;
-  
+
   display: grid;
-  grid-template-rows: min-content auto;
+  grid-template-rows: min-content 100%;
+
+  header > h1:first-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h1 {
+
     text-align: center;
     font-size: 1rem;
     transform: translateY(-.5rem);
@@ -593,8 +632,8 @@ dialog {
 
 form.new-setting {
   display: grid;
-  grid-template-areas: "key xtype" "name namespace" "description lexicon" "value value" "footer footer";
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "key key none none xtype xtype" "name name namespace namespace area area" "description description description lexicon lexicon lexicon" "value value value value value value" "footer footer footer footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: min-content min-content min-content auto min-content;
   grid-gap: 1rem;
   footer {
@@ -610,10 +649,13 @@ form.new-setting {
   .new-name {
     grid-area: name;
   }
+  .new-area {
+    grid-area: area;
+  }
   .new-namespace {
     grid-area: namespace;
   }
-  .new-description {
+  .new-desc {
     grid-area: description;
   }
   .new-lexicon {
@@ -621,7 +663,7 @@ form.new-setting {
   }
   .new-value {
     grid-area: value;
-    
+
     display: grid;
     grid-template-rows: min-content auto;
   }

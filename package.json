@@ -5,6 +5,8 @@
   "dependencies": {
     "mousetrap": "^1.6.1",
     "react": "^15.5.4",
+    "react-ace": "^5.0.1",
+    "react-addons-update": "^15.5.2",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
     "slugg": "^1.2.0"

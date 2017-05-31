@@ -6,7 +6,7 @@ export const updateView = function(view) {
   }
 }
 
-export const UPDATE_SETTING = 'udpate_setting';
+export const UPDATE_SETTING = 'update_setting';
 export const updateSetting = function(uuid, props, view) {
   return {
     type: UPDATE_SETTING,
@@ -29,5 +29,14 @@ export const deleteSettings = function(uuids) {
   return {
     type: DELETE_SETTINGS,
     uuids: uuids
+  }
+}
+
+export const ADD_SETTING = 'add_setting';
+export const addSetting = function(setting, view) {
+  return {
+    type: ADD_SETTING,
+    setting,
+    view
   }
 }

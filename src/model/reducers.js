@@ -2,6 +2,8 @@ import * as actions from './actions';
 
 import slug from 'slugg';
 
+import update from 'react-addons-update';
+
 const combineReducers = require('redux').combineReducers;
 
 const faker = require('faker');
@@ -88,6 +90,11 @@ function settingsReducer(state, action) {
     ));
     break;
 
+    case actions.ADD_SETTING:
+    console.log('settingsReducer', actions.ADD_SETTING);
+    return update(state, {$push: [action.setting]});
+    break;
+
   }
 
   return state;
@@ -142,6 +149,8 @@ function namespaceSettingsReducer(state, action) {
   console.log(action);
   console.log(view);
 
+  let freshSettings;
+
   switch(action.type) {
     case actions.UPDATE_SETTING:
     console.log(`uuid: ${action.uuid}`);
@@ -154,8 +163,13 @@ function namespaceSettingsReducer(state, action) {
       return setting;
     });
 
+    case actions.ADD_SETTING:
+    freshSettings = update(r, {$push: [action.setting]});
+    
     case actions.UPDATE_VIEW:
-    r = settings;
+    r = freshSettings || settings;
+
+
     console.log('UPDATE_VIEW');
     //console.log(view);
     if(action.view.namespace) {

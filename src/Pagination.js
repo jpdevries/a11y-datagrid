@@ -13,7 +13,7 @@ export default function Pagination(props) {
     const opts = [];
     for(let i = 1; i <= numPages; i++) {
       opts.push(
-        <option value={i}>{i}</option>
+        <option key={i} value={i}>{i}</option>
       )
     }
     return opts;
@@ -71,7 +71,7 @@ export default function Pagination(props) {
       <div className="sort-dir">
       <fieldset>
         <legend className="visually-hidden">Sort Direction</legend>
-        <div class="sometimes flexible">
+        <div className="sometimes flexible">
         <span aria-hidden>Sort Direction</span>
         <label htmlFor="sort-dir-asc">
           <input aria-label="ascending" aria-controls={props.view.tableId} checked={props.view.sort.dir == "ASC"} type="radio" id="sort-dir-asc" name="sort-dir" value="ASC" onChange={(event) => {
