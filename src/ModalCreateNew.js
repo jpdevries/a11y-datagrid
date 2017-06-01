@@ -12,7 +12,7 @@ import store from './model/store';
 import brace from 'brace';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
-import AceEditor from 'react-ace';
+//import AceEditor from 'react-ace';
 
 import 'brace/theme/github';
 
@@ -54,12 +54,28 @@ export default class ModalCreateNew extends Component {
     });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({
       previouslyFocusedItem: document.activeElement
     })
     this.keyInput.focus();
     this.addListeners();
+    
+    const { default: AceEditor } = await import('react-ace');
+    this.setState({
+      ace: (
+        <AceEditor
+          mode="javascript"
+          theme="github"
+          onChange={(event) => {
+          }}
+          name="ace-desc"
+          width="auto"
+          height="auto"
+
+        />
+      )
+    });
   }
 
   addListeners() {
@@ -269,17 +285,7 @@ export default class ModalCreateNew extends Component {
           </div>
           <div className="new-value field">
             <label htmlFor="new-value">Value</label>
-            <AceEditor
-              mode="javascript"
-              theme="github"
-              onChange={(event) => {
-
-              }}
-              name="ace-desc"
-              width="auto"
-              height="auto"
-
-            />
+            {this.state.ace || <h2>Loading</h2>}
           </div>
           <footer className="sometimes flexible button-bar">
             <button type="reset" onClick={props.handleClose}>Close</button>
